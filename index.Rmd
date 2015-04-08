@@ -14,6 +14,7 @@ mode        : selfcontained # {standalone, draft}
 
 First, Install some dependencies: 
 
+
 ```
 # set server
 options(repos=structure(c(CRAN="http://rweb.quant.ku.edu/cran/")))
@@ -26,6 +27,14 @@ install.packages("acs")
 devtools::install_github("Rdatatable/data.table", build_vignettes = FALSE)
 devtools::install_github("sdaza/acsr")
 ```
+
+Remember to set the API key for the `acs` package. You have to do it just once: 
+
+```
+
+```
+
+
 
 ----
 
