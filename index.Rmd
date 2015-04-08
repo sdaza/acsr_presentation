@@ -10,7 +10,7 @@ widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 ---
 
-## Read-And-Delete
+## Install `acsr` package
 
 1. Edit YAML front matter
 2. Write using R Markdown
