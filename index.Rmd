@@ -12,8 +12,7 @@ mode        : selfcontained # {standalone, draft}
 
 ## Install `acsr` package in `R`
 
-First, Install some dependencies: 
-
+First, install some dependencies:  
 
 ```
 # set server
@@ -38,7 +37,7 @@ devtools::install_github("sdaza/acsr")
 library(acsr)
 ```
 
-Remember to set the API key for the `acs` package.
+Remember to set the API key for the `acs` package.  
 You have to do it just once.
 
 ```
