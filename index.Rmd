@@ -3,6 +3,9 @@ title       : acsr examples
 subtitle    : 
 author      : Sebastian Daza
 job         : PhD Student
+framework   : html5slides      # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js
+hitheme     : solarized_light
 widgets     : []            # {mathjax, quiz, bootstrap}
 ---
 
@@ -23,8 +26,6 @@ install.packages("acs")
 devtools::install_github("Rdatatable/data.table", build_vignettes = FALSE)
 devtools::install_github("sdaza/acsr")
 ```
-
-
 
 ----
 
