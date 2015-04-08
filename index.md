@@ -1,14 +1,11 @@
 ---
-title       : acsr examples
+title       : `acsr` examples
 subtitle    : 
 author      : Sebastian Daza
 job         : PhD Student
-framework   : html5slides      # {io2012, html5slides, shower, dzslides, ...}
 widgets     : []            # {mathjax, quiz, bootstrap}
 ---
 
- user: ramnathv
-  repo: slidio
 
 ## Install `acsr` package in `R`
 
