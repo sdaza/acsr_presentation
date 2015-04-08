@@ -4,7 +4,7 @@ subtitle    :
 author      : Sebastian Daza
 job         : PhD Student
 framework   : html5slides      # {io2012, html5slides, shower, dzslides, ...}
-highlighter : prettify # {highlight.js, prettify, highlight}
+highlighter : highlight # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
