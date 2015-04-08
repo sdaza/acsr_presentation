@@ -28,12 +28,6 @@ devtools::install_github("Rdatatable/data.table", build_vignettes = FALSE)
 devtools::install_github("sdaza/acsr")
 ```
 
-Remember to set the API key for the `acs` package. You have to do it just once: 
-
-```
-
-```
-
 
 
 ----
@@ -42,7 +36,17 @@ Remember to set the API key for the `acs` package. You have to do it just once:
 
 ```
 library(acsr)
+```
 
+Remember to set the API key for the `acs` package.
+You have to do it just once.
+
+```
+api.key.install(key="*")
+```
+
+Explore help files for the two main functions: 
+```
 ?acsdata
 ?sumacs
 ```

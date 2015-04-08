@@ -29,18 +29,22 @@ devtools::install_github(&quot;Rdatatable/data.table&quot;, build_vignettes = FA
 devtools::install_github(&quot;sdaza/acsr&quot;)
 </code></pre>
 
-<p>Remember to set the API key for the <code>acs</code> package. You have to do it just once: </p>
-
-<pre><code>
-</code></pre>
-
 </article>
 
 <article class="" id="slide-2" style="background:;">
   <h3>Load <code>acsr</code> and help files</h3>
   <pre><code>library(acsr)
+</code></pre>
 
-?acsdata
+<p>Remember to set the API key for the <code>acs</code> package.
+You have to do it just once.</p>
+
+<pre><code>api.key.install(key=&quot;*&quot;)
+</code></pre>
+
+<p>Explore help files for the two main functions: </p>
+
+<pre><code>?acsdata
 ?sumacs
 </code></pre>
 
