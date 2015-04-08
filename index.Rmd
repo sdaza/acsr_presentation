@@ -42,8 +42,16 @@ You have to do it just once.
 api.key.install(key="*")
 ```
 
-Explore help files for the two main functions: 
+Explore help files of the main functions: 
 ```
 ?acsdata
 ?sumacs
 ```
+
+----
+
+## Why `acsdata`?
+
+1. To download the data can be slow, specially when there are many geographic levels
+2. Better, to download the data first, then use them as input 
+3. Main arguments of the `acsdata` function
