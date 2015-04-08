@@ -10,9 +10,14 @@ widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 ---
 
-## Install `acsr` package
+## Install `acsr` package in `R`
 
-1. Edit YAML front matter
+1. Just to be sure, first install some dependencies: 
+
+```
+install.packages("packageName")
+```
+
 2. Write using R Markdown
 3. Use an empty line followed by three dashes to separate slides!
 
