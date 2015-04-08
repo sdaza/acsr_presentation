@@ -1,19 +1,22 @@
 ---
-title       : acsr examples!
+title       : acsr examples
 subtitle    : 
 author      : Sebastian Daza
 job         : PhD Student
 framework   : html5slides      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : [mathjax, bootstrap]            # {mathjax, quiz, bootstrap}
+widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 ---
 
-## Why?
+## Read-And-Delete
 
-This is a test
+1. Edit YAML front matter
+2. Write using R Markdown
+3. Use an empty line followed by three dashes to separate slides!
 
-## This is!
+--- .class #id 
 
-This is another test
+## Slide 2
+
