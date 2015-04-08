@@ -1,5 +1,5 @@
 ---
-title       : `acsr` examples
+title       : acsr examples
 subtitle    : 
 author      : Sebastian Daza
 job         : PhD Student
