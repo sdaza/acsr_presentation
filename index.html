@@ -15,23 +15,27 @@
 	<section class='slides layout-regular template-regular'>
      <article class="" id="slide-1" style="background:;">
   <h3>Install <code>acsr</code> package in <code>R</code></h3>
-  <ol>
-<li>Just to be sure, first install some dependencies: </li>
-</ol>
+  <p>First, Install some dependencies: </p>
 
-<pre><code>install.packages(&quot;packageName&quot;)
+<pre><code># set server
+options(repos=structure(c(CRAN=&quot;http://rweb.quant.ku.edu/cran/&quot;)))
+
+# install from cran
+install.packages(&quot;devtools&quot;)
+install.packages(&quot;acs&quot;)
+
+# install from github
+devtools::install_github(&quot;Rdatatable/data.table&quot;, build_vignettes = FALSE)
+devtools::install_github(&quot;sdaza/acsr&quot;)
 </code></pre>
 
-<ol>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
-</ol>
+<h2>Load <code>acsr</code> and help files</h2>
 
-</article>
+<pre><code>library(acsr)
 
-<article class="" id="slide-2" style="background:;">
-  <h3>Slide 2</h3>
-  <p>Test two? code?</p>
+?acsdata
+?sumacs
+</code></pre>
 
 </article>
 

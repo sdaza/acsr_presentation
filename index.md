@@ -12,18 +12,27 @@ mode        : selfcontained # {standalone, draft}
 
 ## Install `acsr` package in `R`
 
-1. Just to be sure, first install some dependencies: 
+First, Install some dependencies: 
 
 ```
-install.packages("packageName")
+# set server
+options(repos=structure(c(CRAN="http://rweb.quant.ku.edu/cran/")))
+
+# install from cran
+install.packages("devtools")
+install.packages("acs")
+
+# install from github
+devtools::install_github("Rdatatable/data.table", build_vignettes = FALSE)
+devtools::install_github("sdaza/acsr")
 ```
 
-2. Write using R Markdown
-3. Use an empty line followed by three dashes to separate slides!
 
---- 
+## Load `acsr` and help files
 
-## Slide 2
+```
+library(acsr)
 
-Test two? code?
-
+?acsdata
+?sumacs
+```
