@@ -27,6 +27,7 @@ devtools::install_github("Rdatatable/data.table", build_vignettes = FALSE)
 devtools::install_github("sdaza/acsr")
 ```
 
+----
 
 ## Load `acsr` and help files
 
