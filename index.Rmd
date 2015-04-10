@@ -70,6 +70,6 @@ library(acsr)
 ```{r }
 tab <- sumacs("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
 "langspan0913", "prop", data = d)
-tab[1:3, c(1:4,10:11), with = FALSE]
+tab[1:3, c(1:4,11:12), with = FALSE]
 ```
 
