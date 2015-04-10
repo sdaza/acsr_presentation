@@ -234,14 +234,16 @@ tract = 950501, one.zero = TRUE)
     <ul>
 <li><p>one.zero = FALSE</p>
 
-<pre><code class="r">(( sqrt(( 5.4711125^2 + 22.4924^2 + 5.4711125^2) - (0.0226390685640362^2 * 102.1277^2)) / 1546) * 1.645)
+<pre><code class="r">( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2 + 5.4711125 ^ 2 ) - 
+( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546) * 1.645
 </code></pre>
 
 <pre><code>## [1] 0.02518932
 </code></pre></li>
 <li><p>one.zero = TRUE</p>
 
-<pre><code class="r">(( sqrt(( 5.4711125^2 + 22.4924^2) - (0.0226390685640362^2 * 102.1277^2)) / 1546) * 1.645)
+<pre><code class="r">( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2) - 
+( 0.0226390685640362 ^2 * 102.1277 ^ 2 )) / 1546) * 1.645 
 </code></pre>
 
 <pre><code>## [1] 0.0245074
@@ -253,6 +255,32 @@ tract = 950501, one.zero = TRUE)
 </slide>
 
 <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Some options: <code>one.zero</code> and <code>ratio</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>method = &quot;ratio&quot;</p>
+
+<pre><code class="r">tab3 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
+varname = &quot;langspan0913&quot;, method = &quot;ratio&quot;, level = &quot;tract&quot;, county = 1, 
+tract = 950501, one.zero = FALSE)
+</code></pre></li>
+<li><p>one.zero = FALSE</p>
+
+<pre><code class="r">( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2 + 5.4711125 ^ 2 ) 
++ ( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546) * 1.645
+</code></pre>
+
+<pre><code>## [1] 0.02542846
+</code></pre></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
   <article data-timings="">
     
   </article>
@@ -313,8 +341,14 @@ tract = 950501, one.zero = TRUE)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title=''>
+        data-slide=9 title='Some options: <code>one.zero</code> and <code>ratio</code>'>
          9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title=''>
+         10
       </a>
     </li>
   </ul>
