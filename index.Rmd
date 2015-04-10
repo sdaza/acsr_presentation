@@ -241,7 +241,12 @@ tab2[, c(1,6, 11:12), with = FALSE]
 - I used the corresponding variables to create all indicators
 
 
-  ```{r, echo = FALSE}
-    path <- "/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/"
-  ```
+```{r, echo = FALSE}
+path <- "/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/"
+```
+
+```{r}
+sheet <- fread(paste0(path, "moe.csv"))
+str(sheet)
+```
 

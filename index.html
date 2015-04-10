@@ -394,6 +394,19 @@ tract = 950501, one.zero = TRUE)
 <li>I used the corresponding variables to create all indicators</li>
 </ul>
 
+<pre><code class="r">sheet &lt;- fread(paste0(path, &quot;moe.csv&quot;))
+str(sheet)
+</code></pre>
+
+<pre><code>## Classes &#39;data.table&#39; and &#39;data.frame&#39;:   90 obs. of  5 variables:
+##  $ destination: chr  &quot;Food_Sec&quot; &quot;Food_Sec&quot; &quot;Food_Sec&quot; &quot;Food_Sec&quot; ...
+##  $ myfield    : chr  &quot;drive0913&quot; &quot;edass0913&quot; &quot;edcoll0913&quot; &quot;edhs0913&quot; ...
+##  $ type       : chr  &quot;Prop&quot; &quot;Prop&quot; &quot;Prop&quot; &quot;Prop&quot; ...
+##  $ formula    : chr  &quot;(b08101_009 + b08101_017) / b08101_001 * 100&quot; &quot;(b15002_014 + b15002_031) / b15002_001 * 100&quot; &quot;(b15002_015 + b15002_032 + b15002_016 + b15002_017 + b15002_018 + b15002_033 + b15002_034 + b15002_035) / b15002_001 * 100&quot; &quot;(b15002_011 + b15002_028) / b15002_001 * 100&quot; ...
+##  $ moe_varname: chr  &quot;drive0913_moe&quot; &quot;edass0913_moe&quot; &quot;edcoll0913_moe&quot; &quot;edhs0913_moe&quot; ...
+##  - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt;
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
