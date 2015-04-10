@@ -45,9 +45,7 @@
     <h2>Install <code>acsr</code> package in <code>R</code></h2>
   </hgroup>
   <article data-timings="">
-    <p>First, install some dependencies:  </p>
-
-<pre><code># set server
+    <pre><code># set server
 options(repos=structure(c(CRAN=&quot;http://rweb.quant.ku.edu/cran/&quot;)))
 
 # install from cran
@@ -56,6 +54,8 @@ install.packages(&quot;acs&quot;)
 
 # install from github
 devtools::install_github(&quot;Rdatatable/data.table&quot;, build_vignettes = FALSE)
+
+# install acsr package
 devtools::install_github(&quot;sdaza/acsr&quot;)
 </code></pre>
 
@@ -72,7 +72,7 @@ devtools::install_github(&quot;sdaza/acsr&quot;)
 </code></pre>
 
 <p>Remember to set the API key for the <code>acs</code> package.
-You have to do it just once.</p>
+You have to do it only once.</p>
 
 <pre><code>api.key.install(key=&quot;*&quot;)
 </code></pre>
@@ -89,13 +89,13 @@ You have to do it just once.</p>
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>Why <code>acsdata</code>?</h2>
+    <h2>Why to use the <code>acsdata</code> function?</h2>
   </hgroup>
   <article data-timings="">
     <ol>
-<li>To download the data can be slow, specially when there are many geographic levels</li>
-<li>Better, to download the data first, then use them as input </li>
-<li>Main arguments of the <code>acsdata</code> function</li>
+<li>To download the data can be slow, specially when there are many geographic/administrative levels</li>
+<li>A better approach might be to download the data first, and then use them as input with the <code>sumacs</code> function </li>
+<li>Main arguments of the <code>acsdata</code> function are:</li>
 </ol>
 
   </article>
@@ -120,7 +120,7 @@ You have to do it just once.</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Why <code>acsdata</code>?'>
+        data-slide=3 title='Why to use the <code>acsdata</code> function?'>
          3
       </a>
     </li>

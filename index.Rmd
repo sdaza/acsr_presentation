@@ -11,7 +11,6 @@ widgets     : []            # {mathjax, quiz, bootstrap}
 
 ## Install `acsr` package in `R`
 
-First, install some dependencies:  
 
 ```
 # set server
@@ -23,6 +22,8 @@ install.packages("acs")
 
 # install from github
 devtools::install_github("Rdatatable/data.table", build_vignettes = FALSE)
+
+# install acsr package
 devtools::install_github("sdaza/acsr")
 ```
 
@@ -35,7 +36,7 @@ library(acsr)
 ```
 
 Remember to set the API key for the `acs` package.
-You have to do it just once.
+You have to do it only once.
 
 ```
 api.key.install(key="*")
@@ -49,8 +50,10 @@ Explore help files of the main functions:
 
 ----
 
-## Why `acsdata`?
+## Why to use the `acsdata` function?
 
-1. To download the data can be slow, specially when there are many geographic levels
-2. Better, to download the data first, then use them as input 
-3. Main arguments of the `acsdata` function
+1. To download the data can be slow, specially when there are many geographic/administrative levels
+2. A better approach might be to download the data first, and then use them as input with the `sumacs` function 
+3. Main arguments of the `acsdata` function are:
+
+
