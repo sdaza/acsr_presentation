@@ -282,15 +282,15 @@ tract = 950501, one.zero = TRUE)
 
     
     ```r
-    tab3 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048)", 
-    varname = "langspan0913", method = "agg", level = "tract", county = 1, 
+    tab4 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048)", 
+    varname = "test", method = "agg", level = "tract", county = 1, 
     tract = 950501, one.zero = FALSE)
     ```
 
     
     ```
-    ##          stfid tract_fips langspan0913 langspan0913_moe
-    ## 1: 55001950501     950501   0.02263907       0.02475313
+    ##          stfid tract_fips test test_moe
+    ## 1: 55001950501     950501   35   39.128
     ```
 
 - one.zero = FALSE

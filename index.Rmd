@@ -192,14 +192,14 @@ tab2[, c(1,6, 11:12), with = FALSE]
 
 - method = "aggr" and one.zero = FALSE 
 
-    ```{r, warning=FALSE, message=FALSE,  results="hide"}
-    tab3 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048)", 
-    varname = "langspan0913", method = "agg", level = "tract", county = 1, 
+    ```{r,  results="hide"}
+    tab4 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048)", 
+    varname = "test", method = "agg", level = "tract", county = 1, 
     tract = 950501, one.zero = FALSE)
     ```
 
     ```{r, echo = FALSE}
-      tab3[, c(1,6, 11:12), with = FALSE]
+      tab4[, c(1,6, 11:12), with = FALSE]
     ```
 
 - one.zero = FALSE
