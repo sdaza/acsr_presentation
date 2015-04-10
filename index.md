@@ -5,7 +5,7 @@ author      : Sebastian Daza
 job         : PhD Candidate
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js
-hitheme     : solarized_dark
+hitheme     : solarized_light
 widgets     : [mathjax]  # {mathjax, quiz, bootstrap}     
 --- 
 
@@ -160,17 +160,56 @@ varname = "langspan0913", method = "prop", data = d, file = "d.csv")
 
 
 ```r
-tab <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
-varname = "langspan0913", method = "prop", data = d, one.zero = FALSE)
+tab1 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", varname = "langspan0913", 
+  method = "prop", level = "tract", county = 1, tract = 950501, one.zero = FALSE)
 ```
 
 ```
 ## [1] ". . . . . .  ACS variables : 4"
 ## [1] ". . . . . .  Levels : 1"
 ## [1] ". . . . . .  New variables : 1"
+## [1] ". . . . . .  Getting tract data"
 ## [1] ". . . . . .  Creating variables"
 ## [1] ". . . . . .  Formatting output"
 ## [1] ". . . . . .  Done!"
+```
+
+```r
+tab1[, c(1:4,6, 11:12), with = FALSE]
+```
+
+```
+##          stfid sumlevel st_fips cnty_fips tract_fips langspan0913
+## 1: 55001950501      140      55         1     950501   0.02263907
+##    langspan0913_moe
+## 1:       0.02518933
+```
+
+
+```r
+tab2 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", varname = "langspan0913", 
+ method = "prop", level = "tract", county = 1, tract = 950501, one.zero = TRUE)
+```
+
+```
+## [1] ". . . . . .  ACS variables : 4"
+## [1] ". . . . . .  Levels : 1"
+## [1] ". . . . . .  New variables : 1"
+## [1] ". . . . . .  Getting tract data"
+## [1] ". . . . . .  Creating variables"
+## [1] ". . . . . .  Formatting output"
+## [1] ". . . . . .  Done!"
+```
+
+```r
+  tab2[, c(1:4,6, 11:12), with = FALSE]
+```
+
+```
+##          stfid sumlevel st_fips cnty_fips tract_fips langspan0913
+## 1: 55001950501      140      55         1     950501   0.02263907
+##    langspan0913_moe
+## 1:        0.0245074
 ```
 
    $$\frac{1}{2}$$
