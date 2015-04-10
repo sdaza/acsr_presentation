@@ -3,7 +3,7 @@ title       : acsr package
 subtitle    : how to use it
 author      : Sebastian Daza
 job         : PhD Candidate
-framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
+framework   : shower      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js
 hitheme     : solarized_light
 widgets     : [mathjax]  # {mathjax, quiz, bootstrap}     
@@ -224,7 +224,7 @@ tract = 950501, one.zero = TRUE)
 
 ## `ratio` and `one.zero` 
 
-- `method = "ratio"` and `one.zero = FALSE
+- `method = "ratio"` and `one.zero = FALSE`
 
     
     ```r
@@ -340,7 +340,7 @@ tract = 950501, one.zero = TRUE)
 
 - When the square root of the standard error formula doesn't exist (e.g., square root of a negative number), the ratio formula is used  instead.  
 
-- This adjustment is performed `unit by unit`, `row by row.  
+- This adjustment is performed `unit by unit`, `row by row`.  
 
 - There are some cases where the `one.zero` option makes the square root undefinable. In those cases, the function uses the "ratio" formula to estimate the standard errors. Exists the possibility that the "ratio" estimates are higher than the "proportion" estimates without the `one.zero` option.  
 
@@ -374,25 +374,25 @@ str(sheet)
 
 ## Using an Excel file
 
-- This can take a while, here I downloaded the data first!
-
-
-```r
-# download the data first
-wi_acs <- acsdata(sheet[, formula], level = levels)
-# save the data
-save(wi_acs, file = "wi_acs.rd")
-```
-
 - Define all levels in a vector
 
+  
+  ```r
+  # create level vector
+  levels <- c("state", "county", "county.subdivision", 
+    "tract", "block.group", "congressional.district", 
+    "school.district.secondary", "school.district.elementary")
+  ```
 
-```r
-# create level vector
-levels <- c("state", "county", "county.subdivision", 
-  "tract", "block.group", "congressional.district", 
-  "school.district.secondary", "school.district.elementary")
-```
+- This can take a while, here I downloaded the data first!
+
+  
+  ```r
+  # download the data first
+  wi_acs <- acsdata(sheet[, formula], level = levels)
+  # save the data
+  save(wi_acs, file = "wi_acs.rd")
+  ```
 
 
 
@@ -409,8 +409,9 @@ levels <- c("state", "county", "county.subdivision",
 
 ```r
 # compute indicators and export the data
-out <- sumacs(formula = sheet[, formula], varname = sheet[, myfield], method = sheet[, type], 
-    level = levels, one.zero = TRUE, data = wi_acs, file = "output.csv")
+out <- sumacs(formula = sheet[, formula], varname = sheet[, myfield], 
+  method = sheet[, type], level = levels, one.zero = TRUE, 
+  data = wi_acs, file = "output.csv")
 ```
 
 ```
