@@ -2,7 +2,7 @@
 title       : acsr package
 subtitle    : some examples
 author      : Sebastian Daza
-job         : Ph.D. Student
+job         : PhD Candidate
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : pygments
 hitheme     : solarized_light
