@@ -71,7 +71,7 @@ devtools::install_github(&quot;sdaza/acsr&quot;)
     <ul>
 <li><p>Remember to set the API key for the <code>acs</code> package. You have to do it only once</p>
 
-<pre><code>api.key.install(key=&quot;&quot;)
+<pre><code class="r">api.key.install(key=&quot;&quot;)
 </code></pre></li>
 <li><p>Explore help files of the main functions</p>
 
@@ -150,7 +150,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d)
 
 <slide class="" id="slide-5" style="background:;">
   <hgroup>
-    <h2>Some options: <code>format.out</code> (long?)</h2>
+    <h2>Some options: <code>format.out</code></h2>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
@@ -208,7 +208,9 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = 
     <h2>Some options: <code>one.zero</code></h2>
   </hgroup>
   <article data-timings="">
-    <h2>- Different ways to estimate standard errors</h2>
+    <ul>
+<li>Different ways to estimate standard errors</li>
+</ul>
 
 <pre><code class="r">tab1 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, level = &quot;tract&quot;, county = 1, 
@@ -262,11 +264,11 @@ tract = 950501, one.zero = TRUE)
 
 <slide class="" id="slide-9" style="background:;">
   <hgroup>
-    <h2>Some options: <code>ratio</code> and <code>one.zero</code></h2>
+    <h2><code>ratio</code> and <code>one.zero</code></h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p><code>method = &quot;ratio&quot;</code> and <code>one.zero = FALSE</code></p>
+<li><p><code>method = &quot;ratio&quot;</code> and `one.zero = FALSE</p>
 
 <pre><code class="r">tab3 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;ratio&quot;, level = &quot;tract&quot;, county = 1, 
@@ -291,7 +293,7 @@ tract = 950501, one.zero = FALSE)
 
 <slide class="" id="slide-10" style="background:;">
   <hgroup>
-    <h2>Some options: <code>ratio</code> and <code>one.zero</code></h2>
+    <h2><code>ratio</code> and <code>one.zero</code></h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -320,7 +322,7 @@ tract = 950501, one.zero = TRUE)
 
 <slide class="" id="slide-11" style="background:;">
   <hgroup>
-    <h2>Some options: <code>agg</code> and <code>one.zero</code></h2>
+    <h2><code>agg</code> and <code>one.zero</code></h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -348,7 +350,7 @@ tract = 950501, one.zero = FALSE)
 
 <slide class="" id="slide-12" style="background:;">
   <hgroup>
-    <h2>Some options: <code>agg</code> and <code>one.zero</code></h2>
+    <h2><code>agg</code> and <code>one.zero</code></h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -381,7 +383,7 @@ tract = 950501, one.zero = TRUE)
   <article data-timings="">
     <ul>
 <li><p>When the square root of the standard error formula doesn&#39;t exist (e.g., square root of a negative number), the ratio formula is used  instead.  </p></li>
-<li><p>This adjustment is performed <strong>unit by unit</strong>, <strong>row by row</strong>.  </p></li>
+<li><p>This adjustment is performed <code>unit by unit</code>, `row by row.  </p></li>
 <li><p>There are some cases where the <code>one.zero</code> option makes the square root undefinable. In those cases, the function uses the &quot;ratio&quot; formula to estimate the standard errors. Exists the possibility that the &quot;ratio&quot; estimates are higher than the &quot;proportion&quot; estimates without the <code>one.zero</code> option.  </p></li>
 </ul>
 
@@ -456,7 +458,7 @@ levels &lt;- c(&quot;state&quot;, &quot;county&quot;, &quot;county.subdivision&q
 </ul>
 
 <pre><code class="r"># compute indicators and export the data
-out &lt;- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type], 
+out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield], method = sheet[, type], 
     level = levels, one.zero = TRUE, data = wi_acs, file = &quot;output.csv&quot;)
 </code></pre>
 
@@ -532,7 +534,7 @@ out &lt;- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type],
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Some options: <code>format.out</code> (long?)'>
+        data-slide=5 title='Some options: <code>format.out</code>'>
          5
       </a>
     </li>
@@ -556,25 +558,25 @@ out &lt;- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type],
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Some options: <code>ratio</code> and <code>one.zero</code>'>
+        data-slide=9 title='<code>ratio</code> and <code>one.zero</code>'>
          9
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Some options: <code>ratio</code> and <code>one.zero</code>'>
+        data-slide=10 title='<code>ratio</code> and <code>one.zero</code>'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Some options: <code>agg</code> and <code>one.zero</code>'>
+        data-slide=11 title='<code>agg</code> and <code>one.zero</code>'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Some options: <code>agg</code> and <code>one.zero</code>'>
+        data-slide=12 title='<code>agg</code> and <code>one.zero</code>'>
          12
       </a>
     </li>

@@ -33,7 +33,8 @@ devtools::install_github("sdaza/acsr")
 
 - Remember to set the API key for the `acs` package. You have to do it only once
 
-    ```
+    
+    ```r
     api.key.install(key="")
     ```
 
@@ -107,7 +108,7 @@ tab[1:3, c(1:4,11:12), with = FALSE]
 
 --- 
 
-## Some options: `format.out` (long?)
+## Some options: `format.out`
 
 
 ```r
@@ -161,7 +162,7 @@ varname = "langspan0913", method = "prop", data = d, file = "d.csv")
 ## Some options: `one.zero`
 
 - Different ways to estimate standard errors
-- 
+
 
 ```r
 tab1 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
@@ -218,9 +219,9 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `ratio` and `one.zero` 
+## `ratio` and `one.zero` 
 
-- `method = "ratio"` and `one.zero = FALSE`
+- `method = "ratio"` and `one.zero = FALSE
 
     
     ```r
@@ -247,7 +248,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `ratio` and `one.zero` 
+## `ratio` and `one.zero` 
 
 - `method = "ratio"` and `one.zero = TRUE` 
 
@@ -276,7 +277,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `agg` and `one.zero` 
+##  `agg` and `one.zero` 
 
 - `method = "agg"` and `one.zero = FALSE` 
 
@@ -304,7 +305,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `agg` and `one.zero` 
+## `agg` and `one.zero` 
 
 - `method = "agg"` and `one.zero = TRUE` 
 
@@ -336,7 +337,7 @@ tract = 950501, one.zero = TRUE)
 
 - When the square root of the standard error formula doesn't exist (e.g., square root of a negative number), the ratio formula is used  instead.  
 
-- This adjustment is performed __unit by unit__, __row by row__.  
+- This adjustment is performed `unit by unit`, `row by row.  
 
 - There are some cases where the `one.zero` option makes the square root undefinable. In those cases, the function uses the "ratio" formula to estimate the standard errors. Exists the possibility that the "ratio" estimates are higher than the "proportion" estimates without the `one.zero` option.  
 
@@ -404,7 +405,7 @@ levels <- c("state", "county", "county.subdivision",
 
 ```r
 # compute indicators and export the data
-out <- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type], 
+out <- sumacs(formula = sheet[, formula], varname = sheet[, myfield], method = sheet[, type], 
     level = levels, one.zero = TRUE, data = wi_acs, file = "output.csv")
 ```
 
