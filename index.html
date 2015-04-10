@@ -439,19 +439,19 @@ save(wi_acs, file = &quot;wi_acs.rd&quot;) # save data
     <h2>Using your Excel file</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">levels &lt;- c(&quot;state&quot;, &quot;county&quot;, &quot;county.subdivision&quot;, &quot;tract&quot;, 
-  &quot;block.group&quot;, &quot;congressional.district&quot;, 
+    <pre><code class="r">levels &lt;- c(&quot;state&quot;, &quot;county&quot;, &quot;county.subdivision&quot;, 
+  &quot;tract&quot;, &quot;block.group&quot;, &quot;congressional.district&quot;, 
   &quot;school.district.secondary&quot;, &quot;school.district.elementary&quot;)
 
-out &lt;- sumacs(sheet[1, formula], 
-    sheet[1, myfield], 
-    method = sheet[1, type], 
+out &lt;- sumacs(sheet[, formula], 
+    sheet[, myfield], 
+    method = sheet[, type], 
     level = levels, one.zero = TRUE, data = wi_acs, file = &quot;output.csv&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;. . . . . .  ACS variables : 3&quot;
+<pre><code>## [1] &quot;. . . . . .  ACS variables : 266&quot;
 ## [1] &quot;. . . . . .  Levels : 8&quot;
-## [1] &quot;. . . . . .  New variables : 1&quot;
+## [1] &quot;. . . . . .  New variables : 90&quot;
 ## [1] &quot;. . . . . .  Creating variables&quot;
 ## [1] &quot;. . . . . .  Formatting output&quot;
 ## [1] &quot;. . . . . .  Data exported to a CSV file! Done!&quot;
@@ -466,7 +466,8 @@ out &lt;- sumacs(sheet[1, formula],
     <h2>Conclusion</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p>Test</p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>

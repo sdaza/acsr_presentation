@@ -389,20 +389,20 @@ load(paste0(path, "wi_acs.rdata")) # load data
 
 
 ```r
-levels <- c("state", "county", "county.subdivision", "tract", 
-  "block.group", "congressional.district", 
+levels <- c("state", "county", "county.subdivision", 
+  "tract", "block.group", "congressional.district", 
   "school.district.secondary", "school.district.elementary")
 
-out <- sumacs(sheet[1, formula], 
-    sheet[1, myfield], 
-    method = sheet[1, type], 
+out <- sumacs(sheet[, formula], 
+    sheet[, myfield], 
+    method = sheet[, type], 
     level = levels, one.zero = TRUE, data = wi_acs, file = "output.csv")
 ```
 
 ```
-## [1] ". . . . . .  ACS variables : 3"
+## [1] ". . . . . .  ACS variables : 266"
 ## [1] ". . . . . .  Levels : 8"
-## [1] ". . . . . .  New variables : 1"
+## [1] ". . . . . .  New variables : 90"
 ## [1] ". . . . . .  Creating variables"
 ## [1] ". . . . . .  Formatting output"
 ## [1] ". . . . . .  Data exported to a CSV file! Done!"
@@ -411,3 +411,6 @@ out <- sumacs(sheet[1, formula],
 ---
 
 ## Conclusion
+
+Test
+

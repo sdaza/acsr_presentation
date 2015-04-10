@@ -274,16 +274,19 @@ load(paste0(path, "wi_acs.rdata")) # load data
 ## Using your Excel file
 
 ```{r}
-levels <- c("state", "county", "county.subdivision", "tract", 
-  "block.group", "congressional.district", 
+levels <- c("state", "county", "county.subdivision", 
+  "tract", "block.group", "congressional.district", 
   "school.district.secondary", "school.district.elementary")
 
-out <- sumacs(sheet[1, formula], 
-    sheet[1, myfield], 
-    method = sheet[1, type], 
+out <- sumacs(sheet[, formula], 
+    sheet[, myfield], 
+    method = sheet[, type], 
     level = levels, one.zero = TRUE, data = wi_acs, file = "output.csv")
 ```
 
 ---
 
 ## Conclusion
+
+Test
+
