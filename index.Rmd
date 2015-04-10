@@ -265,8 +265,15 @@ save(wi_acs, file = "wi_acs.rd") # save data
 ```
 
 ```{r}
-load(paste0(path, "wi_acs.rd")) # load data
+load(paste0(path, "wi_acs.rdata")) # load data
+```
 
+--- 
+
+
+## Using your Excel file
+
+```{r}
 levels <- c("state", "county", "county.subdivision", "tract", 
   "block.group", "congressional.district", 
   "school.district.secondary", "school.district.elementary")
@@ -277,6 +284,6 @@ out <- sumacs(sheet[1, formula],
     level = levels, one.zero = TRUE, data = wi_acs, file = "output.csv")
 ```
 
---- 
+---
 
 ## Conclusion

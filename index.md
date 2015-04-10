@@ -379,18 +379,14 @@ save(wi_acs, file = "wi_acs.rd") # save data
 
 
 ```r
-load(paste0(path, "wi_acs.rd")) # load data
+load(paste0(path, "wi_acs.rdata")) # load data
 ```
 
-```
-## Warning in readChar(con, 5L, useBytes = TRUE): cannot open compressed file
-## '/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/wi_acs.rd',
-## probable reason 'No such file or directory'
-```
+--- 
 
-```
-## Error in readChar(con, 5L, useBytes = TRUE): cannot open the connection
-```
+
+## Using your Excel file
+
 
 ```r
 levels <- c("state", "county", "county.subdivision", "tract", 
@@ -412,6 +408,6 @@ out <- sumacs(sheet[1, formula],
 ## [1] ". . . . . .  Data exported to a CSV file! Done!"
 ```
 
---- 
+---
 
 ## Conclusion
