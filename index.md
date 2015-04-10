@@ -64,4 +64,5 @@ acsdata(formula, level = "county", endyear = 2013, span = 5,
 
 ```r
 library(acsr)
-acsdata("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", level = "county") ```
+acsdata("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", level = "county")
+```
