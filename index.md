@@ -2,7 +2,6 @@
 title       : acsr package
 subtitle    : how to use it
 author      : Sebastian Daza
-job         : sebadaza.com
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js
 hitheme     : solarized_light
