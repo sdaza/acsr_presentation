@@ -9,6 +9,19 @@ hitheme     : solarized_light
 widgets     : []            # {mathjax, quiz, bootstrap}
 ---
 
+.title-slide {
+  background-color: #CBE7A5; /* #EDE0CF; ; #CA9F9D*/
+}
+
+.title-slide hgroup > h1{
+ font-family: 'Oswald', 'Helvetica', sanserif; 
+}
+
+.title-slide hgroup > h1, 
+.title-slide hgroup > h2 {
+  color: #535E43 ;  /* ; #EF5150*/
+}
+
 
 ## Install `acsr` package in `R`
 
