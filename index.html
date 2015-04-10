@@ -235,7 +235,7 @@ tract = 950501, one.zero = TRUE)
 <li><p>one.zero = FALSE</p>
 
 <pre><code class="r">( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2 + 5.4711125 ^ 2 ) - 
-( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546) * 1.645
+( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546 ) * 1.645
 </code></pre>
 
 <pre><code>## [1] 0.02518932
@@ -243,7 +243,7 @@ tract = 950501, one.zero = TRUE)
 <li><p>one.zero = TRUE</p>
 
 <pre><code class="r">( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2) - 
-( 0.0226390685640362 ^2 * 102.1277 ^ 2 )) / 1546) * 1.645 
+( 0.0226390685640362 ^2 * 102.1277 ^ 2 )) / 1546 ) * 1.645 
 </code></pre>
 
 <pre><code>## [1] 0.0245074
@@ -269,11 +269,10 @@ tract = 950501, one.zero = FALSE)
 
 <pre><code>##          stfid tract_fips langspan0913 langspan0913_moe
 ## 1: 55001950501     950501   0.02263907       0.02542847
-</code></pre></li>
-<li><p>one.zero = FALSE</p>
+</code></pre>
 
 <pre><code class="r">( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2 + 5.4711125 ^ 2 ) 
-+ ( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546) * 1.645
++ ( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546 ) * 1.645
 </code></pre>
 
 <pre><code>## [1] 0.02542846
@@ -299,11 +298,10 @@ tract = 950501, one.zero = TRUE)
 
 <pre><code>##          stfid tract_fips langspan0913 langspan0913_moe
 ## 1: 55001950501     950501   0.02263907       0.02475313
-</code></pre></li>
-<li><p>one.zero = TRUE</p>
+</code></pre>
 
 <pre><code class="r">( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2 ) 
-+ ( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546) * 1.645
++ ( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546 ) * 1.645
 </code></pre>
 
 <pre><code>## [1] 0.02475312
@@ -316,11 +314,11 @@ tract = 950501, one.zero = TRUE)
 
 <slide class="" id="slide-11" style="background:;">
   <hgroup>
-    <h2>Some options: <code>one.zero</code> and <code>aggr</code></h2>
+    <h2>Some options: <code>one.zero</code> and <code>agg</code></h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>method = &quot;aggr&quot; and one.zero = FALSE </p>
+<li><p>method = &quot;agg&quot; and one.zero = FALSE </p>
 
 <pre><code class="r">tab4 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048)&quot;, 
 varname = &quot;test&quot;, method = &quot;agg&quot;, level = &quot;tract&quot;, county = 1, 
@@ -329,14 +327,12 @@ tract = 950501, one.zero = FALSE)
 
 <pre><code>##          stfid tract_fips test test_moe
 ## 1: 55001950501     950501   35   39.128
-</code></pre></li>
-<li><p>one.zero = FALSE</p>
-
-<pre><code class="r">( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2 ) 
-+ ( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546) * 1.645
 </code></pre>
 
-<pre><code>## [1] 0.02475312
+<pre><code class="r">sqrt( 5.4711125^2 + 22.4924^2 + 5.4711125^2 )  * 1.645
+</code></pre>
+
+<pre><code>## [1] 39.12798
 </code></pre></li>
 </ul>
 
@@ -345,8 +341,31 @@ tract = 950501, one.zero = FALSE)
 </slide>
 
 <slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Some options: <code>one.zero</code> and <code>agg</code></h2>
+  </hgroup>
   <article data-timings="">
-    
+    <ul>
+<li><p>method = &quot;agg&quot; and one.zero = TRUE </p>
+
+<pre><code class="r">tab4 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048)&quot;, 
+varname = &quot;test&quot;, method = &quot;agg&quot;, level = &quot;tract&quot;, county = 1, 
+tract = 950501, one.zero = TRUE)
+</code></pre>
+
+<pre><code>##          stfid tract_fips test test_moe
+## 1: 55001950501     950501   35 38.07887
+</code></pre>
+
+<pre><code class="r">sqrt( 5.4711125 ^ 2 + 22.4924 ^ 2)  * 1.645
+</code></pre>
+
+<pre><code>## [1] 38.07886
+</code></pre></li>
+</ul>
+
+<hr>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -417,13 +436,13 @@ tract = 950501, one.zero = FALSE)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Some options: <code>one.zero</code> and <code>aggr</code>'>
+        data-slide=11 title='Some options: <code>one.zero</code> and <code>agg</code>'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title=''>
+        data-slide=12 title='Some options: <code>one.zero</code> and <code>agg</code>'>
          12
       </a>
     </li>
