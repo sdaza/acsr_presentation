@@ -330,6 +330,7 @@ tract = 950501, one.zero = TRUE)
 
 ## Some details...
 
-- When the square root doesn't exists (e.g., square root of a negative number), the ratio formula is used to estimate the standard error.
-- This adjustment is performed unit by unit.
-- There are some cases in which  there were some cases where the one.zero option makes the square root undefinable. Thus, the function uses the ratio estimation of standard errors as solution. Those "ratio" estimates might be higher than estimates not using the one.zero option.
+- When the square root of the standard error formula doesn't exists (e.g., square root of a negative number), the ratio formula is used  instead.   
+- This adjustment is performed unit by unit, row by row.  
+
+- There are some cases where the `one.zero``option makes the square root undefinable. In those cases, the function uses the "ratio" formula to estimate the standard errors. Exists the possibility that the "ratio" estimates are higher than the "proportion" estimates not using the `one.zero` option.  
