@@ -142,7 +142,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d)
 
 <slide class="" id="slide-5" style="background:;">
   <hgroup>
-    <h2>Some options: format.out (wide or long)</h2>
+    <h2>Some options: format.out <code>wide or long</code></h2>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
@@ -164,6 +164,27 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.
 ## 1: 55001      050      55       001 langspan0913 0.02725587 0.003377554
 ## 2: 55003      050      55       003 langspan0913 0.01152700 0.003850785
 ## 3: 55005      050      55       005 langspan0913 0.02040295 0.003084028
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Some options: format.out <code>file</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
+varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = &quot;d.csv&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;. . . . . .  ACS variables : 4&quot;
+## [1] &quot;. . . . . .  Levels : 1&quot;
+## [1] &quot;. . . . . .  New variables : 1&quot;
+## [1] &quot;. . . . . .  Creating variables&quot;
+## [1] &quot;. . . . . .  Formatting output&quot;
+## [1] &quot;. . . . . .  Data exported to a CSV file! Done!&quot;
 </code></pre>
 
   </article>
@@ -200,8 +221,14 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Some options: format.out (wide or long)'>
+        data-slide=5 title='Some options: format.out <code>wide or long</code>'>
          5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Some options: format.out <code>file</code>'>
+         6
       </a>
     </li>
   </ul>

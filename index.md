@@ -102,7 +102,7 @@ tab[1:3, c(1:4,11:12), with = FALSE]
 
 --- 
 
-## Some options: format.out (wide or long)
+## Some options: format.out `wide or long`
 
 
 ```r
@@ -130,3 +130,21 @@ tab[1:3, c(1:4,11:13), with = FALSE]
 ## 3: 55005      050      55       005 langspan0913 0.02040295 0.003084028
 ```
 
+--- 
+
+## Some options: format.out `file`
+
+
+```r
+tab <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
+varname = "langspan0913", method = "prop", data = d, file = "d.csv")
+```
+
+```
+## [1] ". . . . . .  ACS variables : 4"
+## [1] ". . . . . .  Levels : 1"
+## [1] ". . . . . .  New variables : 1"
+## [1] ". . . . . .  Creating variables"
+## [1] ". . . . . .  Formatting output"
+## [1] ". . . . . .  Data exported to a CSV file! Done!"
+```
