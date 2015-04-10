@@ -56,7 +56,6 @@ library(acsr)
 
 
 
-
 ```r
 d <- acsdata("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", level = "county")
 ```
@@ -68,29 +67,4 @@ d <- acsdata("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", level = "cou
 ## [1] ". . . . . .  Done!"
 ```
 
-```r
-str(d)
-```
-
-```
-## List of 1
-##  $ county:Formal class 'acs' [package "acs"] with 9 slots
-##   .. ..@ endyear       : int 2013
-##   .. ..@ span          : int 5
-##   .. ..@ geography     :'data.frame':	72 obs. of  3 variables:
-##   .. .. ..$ NAME  : chr [1:72] "Adams County, Wisconsin" "Ashland County, Wisconsin" "Barron County, Wisconsin" "Bayfield County, Wisconsin" ...
-##   .. .. ..$ state : int [1:72] 55 55 55 55 55 55 55 55 55 55 ...
-##   .. .. ..$ county: chr [1:72] "001" "003" "005" "007" ...
-##   .. ..@ acs.colnames  : chr [1:4] "B16004_004" "B16004_026" "B16004_048" "B16004_001"
-##   .. ..@ modified      : logi FALSE
-##   .. ..@ acs.units     : Factor w/ 5 levels "count","dollars",..: 1 1 1 1
-##   .. ..@ currency.year : int 2013
-##   .. ..@ estimate      : num [1:72, 1:4] 47 10 252 37 4328 ...
-##   .. .. ..- attr(*, "dimnames")=List of 2
-##   .. .. .. ..$ : chr [1:72] "Adams County, Wisconsin" "Ashland County, Wisconsin" "Barron County, Wisconsin" "Bayfield County, Wisconsin" ...
-##   .. .. .. ..$ : chr [1:4] "B16004_004" "B16004_026" "B16004_048" "B16004_001"
-##   .. ..@ standard.error: num [1:72, 1:4] 26.14 4.26 43.77 11.55 210.33 ...
-##   .. .. ..- attr(*, "dimnames")=List of 2
-##   .. .. .. ..$ : chr [1:72] "Adams County, Wisconsin" "Ashland County, Wisconsin" "Barron County, Wisconsin" "Bayfield County, Wisconsin" ...
-##   .. .. .. ..$ : chr [1:4] "B16004_004" "B16004_026" "B16004_048" "B16004_001"
-```
+3. This will create a list with ACS objects.

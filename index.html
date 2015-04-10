@@ -104,30 +104,9 @@ You have to do it only once.</p>
 ## [1] &quot;. . . . . .  Done!&quot;
 </code></pre>
 
-<pre><code class="r">str(d)
-</code></pre>
-
-<pre><code>## List of 1
-##  $ county:Formal class &#39;acs&#39; [package &quot;acs&quot;] with 9 slots
-##   .. ..@ endyear       : int 2013
-##   .. ..@ span          : int 5
-##   .. ..@ geography     :&#39;data.frame&#39;:    72 obs. of  3 variables:
-##   .. .. ..$ NAME  : chr [1:72] &quot;Adams County, Wisconsin&quot; &quot;Ashland County, Wisconsin&quot; &quot;Barron County, Wisconsin&quot; &quot;Bayfield County, Wisconsin&quot; ...
-##   .. .. ..$ state : int [1:72] 55 55 55 55 55 55 55 55 55 55 ...
-##   .. .. ..$ county: chr [1:72] &quot;001&quot; &quot;003&quot; &quot;005&quot; &quot;007&quot; ...
-##   .. ..@ acs.colnames  : chr [1:4] &quot;B16004_004&quot; &quot;B16004_026&quot; &quot;B16004_048&quot; &quot;B16004_001&quot;
-##   .. ..@ modified      : logi FALSE
-##   .. ..@ acs.units     : Factor w/ 5 levels &quot;count&quot;,&quot;dollars&quot;,..: 1 1 1 1
-##   .. ..@ currency.year : int 2013
-##   .. ..@ estimate      : num [1:72, 1:4] 47 10 252 37 4328 ...
-##   .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
-##   .. .. .. ..$ : chr [1:72] &quot;Adams County, Wisconsin&quot; &quot;Ashland County, Wisconsin&quot; &quot;Barron County, Wisconsin&quot; &quot;Bayfield County, Wisconsin&quot; ...
-##   .. .. .. ..$ : chr [1:4] &quot;B16004_004&quot; &quot;B16004_026&quot; &quot;B16004_048&quot; &quot;B16004_001&quot;
-##   .. ..@ standard.error: num [1:72, 1:4] 26.14 4.26 43.77 11.55 210.33 ...
-##   .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
-##   .. .. .. ..$ : chr [1:72] &quot;Adams County, Wisconsin&quot; &quot;Ashland County, Wisconsin&quot; &quot;Barron County, Wisconsin&quot; &quot;Bayfield County, Wisconsin&quot; ...
-##   .. .. .. ..$ : chr [1:4] &quot;B16004_004&quot; &quot;B16004_026&quot; &quot;B16004_048&quot; &quot;B16004_001&quot;
-</code></pre>
+<ol>
+<li>This will create a list with ACS objects.</li>
+</ol>
 
   </article>
   <!-- Presenter Notes -->
