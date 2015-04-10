@@ -4,7 +4,7 @@ subtitle    : some examples
 author      : Sebastian Daza
 job         : Ph.D. Student
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight.js
+highlighter : pygments
 hitheme     : solarized_light
 widgets     : []            # {mathjax, quiz, bootstrap}
 --- 
