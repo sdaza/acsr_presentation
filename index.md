@@ -5,8 +5,8 @@ author      : Sebastian Daza
 job         : PhD Candidate
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js
-hitheme     : solarized_light
-widgets     : [mathjax, bootstrap]  # {mathjax, quiz, bootstrap}     
+hitheme     : solarized_dark
+widgets     : [mathjax]  # {mathjax, quiz, bootstrap}     
 --- 
 
 ## Install `acsr` package in `R`
