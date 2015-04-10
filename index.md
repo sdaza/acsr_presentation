@@ -149,6 +149,8 @@ varname = "langspan0913", method = "prop", data = d, file = "d.csv")
 ## [1] ". . . . . .  Data exported to a CSV file! Done!"
 ```
 
+--- 
+
 ## Some options: `one.zero`
 
 
@@ -165,5 +167,4 @@ varname = "langspan0913", method = "prop", data = d, one.zero = FALSE)
 ## [1] ". . . . . .  Formatting output"
 ## [1] ". . . . . .  Done!"
 ```
-
 
