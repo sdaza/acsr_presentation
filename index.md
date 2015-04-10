@@ -5,7 +5,7 @@ author      : Sebastian Daza
 job         : PhD Candidate
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : pygments
-widgets     : []            # {mathjax, quiz, bootstrap}
+widgets     : [mathjax, bootstrap]  # {mathjax, quiz, bootstrap}     
 --- 
 
 ## Install `acsr` package in `R`
