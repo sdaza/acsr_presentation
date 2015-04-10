@@ -216,7 +216,7 @@ tract = 950501, one.zero = TRUE)
 
 ## Some options: `one.zero` and `ratio`
 
-- method = ratio and one.zero = FALSE
+- method = "ratio" and one.zero = FALSE
 
     
     ```r
@@ -283,12 +283,8 @@ tract = 950501, one.zero = TRUE)
     
     ```r
     tab3 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048)", 
-    varname = "langspan0913", method = "aggr", level = "tract", county = 1, 
+    varname = "langspan0913", method = "agg", level = "tract", county = 1, 
     tract = 950501, one.zero = FALSE)
-    ```
-    
-    ```
-    ## Error in as.vector(p): object 'p' not found
     ```
 
     

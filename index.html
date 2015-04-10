@@ -260,7 +260,7 @@ tract = 950501, one.zero = TRUE)
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>method = ratio and one.zero = FALSE</p>
+<li><p>method = &quot;ratio&quot; and one.zero = FALSE</p>
 
 <pre><code class="r">tab3 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;ratio&quot;, level = &quot;tract&quot;, county = 1, 
@@ -323,11 +323,8 @@ tract = 950501, one.zero = TRUE)
 <li><p>method = &quot;aggr&quot; and one.zero = FALSE </p>
 
 <pre><code class="r">tab3 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048)&quot;, 
-varname = &quot;langspan0913&quot;, method = &quot;aggr&quot;, level = &quot;tract&quot;, county = 1, 
+varname = &quot;langspan0913&quot;, method = &quot;agg&quot;, level = &quot;tract&quot;, county = 1, 
 tract = 950501, one.zero = FALSE)
-</code></pre>
-
-<pre><code>## Error in as.vector(p): object &#39;p&#39; not found
 </code></pre>
 
 <pre><code>##          stfid tract_fips langspan0913 langspan0913_moe
