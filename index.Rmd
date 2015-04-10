@@ -226,5 +226,6 @@ tab2[, c(1,6, 11:12), with = FALSE]
 
 ## Some details...
 
-- When the square root doesn't exists ( square root of a negative number), the ratio formula is used to estimate the standard error
-- There are some cases in which 
+- When the square root doesn't exists (e.g., square root of a negative number), the ratio formula is used to estimate the standard error.
+- This adjustment is performed unit by unit.
+- There are some cases in which  there were some cases where the one.zero option makes the square root undefinable. Thus, the function uses the ratio estimation of standard errors as solution. Those "ratio" estimates might be higher than estimates not using the one.zero option.
