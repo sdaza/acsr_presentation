@@ -172,3 +172,6 @@ varname = "langspan0913", method = "prop", data = d, one.zero = FALSE)
 ## [1] ". . . . . .  Done!"
 ```
 
+   $$\frac{1}{2}$$
+
+---
