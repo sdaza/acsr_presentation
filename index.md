@@ -166,14 +166,6 @@ tract = 950501, one.zero = FALSE)
 ```
 
 
-```r
-  tab1[, c(1,6, 11:12), with = FALSE]
-```
-
-```
-##          stfid tract_fips langspan0913 langspan0913_moe
-## 1: 55001950501     950501   0.02263907       0.02518933
-```
 
 
 ```r
@@ -182,13 +174,5 @@ varname = "langspan0913", method = "prop", level = "tract", county = 1,
 tract = 950501, one.zero = TRUE)
 ```
 
-```r
-  tab2[, c(1,6, 11:12), with = FALSE]
-```
-
-```
-##          stfid tract_fips langspan0913 langspan0913_moe
-## 1: 55001950501     950501   0.02263907        0.0245074
-```
 
 ---
