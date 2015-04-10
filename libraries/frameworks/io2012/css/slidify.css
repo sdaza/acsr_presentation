@@ -351,18 +351,18 @@ pre code {
   width: 100%;
 }
 
-/*.title-slide {
-  background-color: #FFFFFF;
-   background-image:url(http://goo.gl/EpXln); 
-}*/
+.title-slide {
+  background-color: #FFF;
+   /*background-image:url(http://goo.gl/EpXln); */
+}
 
 .title-slide hgroup > h1{
  font-family: 'Oswald', 'Helvetica', sanserif; 
 }
-/*
+
 .title-slide hgroup > h1, 
 .title-slide hgroup > h2 {
-  color:  #FFFFFF;
-}*/
+  color: #535E43 ;  /* ; #EF5150*/
+}
 
 
