@@ -142,7 +142,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d)
 
 <slide class="" id="slide-5" style="background:;">
   <hgroup>
-    <h2>Some options: format.out <code>wide or long</code></h2>
+    <h2>Some options: <code>format.out</code></h2>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
@@ -172,7 +172,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.
 
 <slide class="" id="slide-6" style="background:;">
   <hgroup>
-    <h2>Some options: format.out <code>file</code></h2>
+    <h2>Some options: <code>file</code></h2>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
@@ -185,6 +185,20 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = 
 ## [1] &quot;. . . . . .  Creating variables&quot;
 ## [1] &quot;. . . . . .  Formatting output&quot;
 ## [1] &quot;. . . . . .  Data exported to a CSV file! Done!&quot;
+</code></pre>
+
+<h2>Some options: <code>one.zero</code></h2>
+
+<pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
+varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, one.zero = FALSE)
+</code></pre>
+
+<pre><code>## [1] &quot;. . . . . .  ACS variables : 4&quot;
+## [1] &quot;. . . . . .  Levels : 1&quot;
+## [1] &quot;. . . . . .  New variables : 1&quot;
+## [1] &quot;. . . . . .  Creating variables&quot;
+## [1] &quot;. . . . . .  Formatting output&quot;
+## [1] &quot;. . . . . .  Done!&quot;
 </code></pre>
 
   </article>
@@ -221,13 +235,13 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = 
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Some options: format.out <code>wide or long</code>'>
+        data-slide=5 title='Some options: <code>format.out</code>'>
          5
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Some options: format.out <code>file</code>'>
+        data-slide=6 title='Some options: <code>file</code>'>
          6
       </a>
     </li>
