@@ -214,7 +214,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `ratio` and `one.zero = FALSE` 
+## Some options: `ratio` and `one.zero` 
 
 - method = "ratio" and one.zero = FALSE
 
@@ -243,7 +243,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `ratio` and `one.zero = TRUE` 
+## Some options: `ratio` and `one.zero` 
 
 - method = "ratio" and one.zero = TRUE 
 
@@ -272,7 +272,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `agg` and `one.zero = FALSE` 
+## Some options: `agg` and `one.zero` 
 
 - method = "agg" and one.zero = FALSE 
 
@@ -300,7 +300,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `agg` and `one.zero = TRUE` 
+## Some options: `agg` and `one.zero` 
 
 - method = "agg" and one.zero = TRUE 
 
@@ -338,7 +338,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Using your Excel file
+## Using an Excel file
 
 - After adjusting some minor format issues, save the Excel file as a CSV file
 - Read that file using `R`
@@ -364,7 +364,7 @@ str(sheet)
 
 --- 
 
-## Using your Excel file
+## Using an Excel file
 
 - This can take a while, here I downloaded the data first!
 
@@ -391,7 +391,7 @@ levels <- c("state", "county", "county.subdivision",
 --- 
 
 
-## Using your Excel file
+## Using an Excel file
 
 
 - Use the corresponding columns and fields to create indicators
@@ -422,8 +422,8 @@ out <- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type],
     - Reads formulas directly
     - Different formats for outputs (wide and long), exports the data
     - Easy way to adjust MOEs to different confidence levels
-    - __Ratio__ adjustment of standard errors per unit
-    - __zero option__ for proportions, ratios and aggregations
+    - `Ratio adjustment` of standard errors per unit
+    - `zero-option` for proportions, ratios and aggregations
 
 - Limitations
     - It depends heavily on the ACS package
