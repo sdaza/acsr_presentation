@@ -291,7 +291,7 @@ tract = 950501, one.zero = TRUE)
 
     
     ```r
-    sqrt( 5.4711125^2 + 22.4924^2 + 5.4711125^2 )  * 1.645
+    sqrt( 5.4711125 ^2 + 22.4924 ^ 2 + 5.4711125 ^ 2 )  * 1.645
     ```
     
     ```
@@ -319,11 +319,16 @@ tract = 950501, one.zero = TRUE)
 
     
     ```r
-    sqrt( 5.4711125 ^ 2 + 22.4924 ^ 2)  * 1.645
+    sqrt( 5.4711125 ^ 2 + 22.4924 ^ 2 )  * 1.645
     ```
     
     ```
     ## [1] 38.07886
     ```
 
-___ 
+---
+
+## Some details...
+
+- When the square root doesn't exists ( square root of a negative number), the ratio formula is used to estimate the standard error
+- There are some cases in which 
