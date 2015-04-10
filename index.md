@@ -45,10 +45,11 @@ devtools::install_github("sdaza/acsr")
     ?sumacs
     ```
 - Check defaults!
-    - State = WI
-    - Year  = 2013
-    - Span = 5
-    - Level = county
+ 
+      - State = WI
+      - Year  = 2013
+      - Span = 5
+      - Level = county
 
 ---
 
