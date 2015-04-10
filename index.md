@@ -50,21 +50,23 @@ library(acsr)
 
 ## Why to use the `acsdata` function?
 
-1. To download the data can be slow, specially when there are many geographic/administrative levels
-2. A better approach might be to download the data first, and then use them as input with the `sumacs` function 
+- To download the data can be slow, specially when there are many geographic/administrative levels
+-  A better approach might be to download the data first, and then use them as input with the `sumacs` function 
 
 
 
+    
+    ```r
+    d <- acsdata("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", level = "county")
+    ```
+    
+    ```
+    ## [1] ". . . . . .  ACS variables : 4"
+    ## [1] ". . . . . .  Levels : 1"
+    ## [1] ". . . . . .  Getting county data"
+    ## [1] ". . . . . .  Done!"
+    ```
 
-```r
-d <- acsdata("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", level = "county")
-```
+- This will create a list with ACS objects.
 
-```
-## [1] ". . . . . .  ACS variables : 4"
-## [1] ". . . . . .  Levels : 1"
-## [1] ". . . . . .  Getting county data"
-## [1] ". . . . . .  Done!"
-```
-
-3. This will create a list with ACS objects.
+---

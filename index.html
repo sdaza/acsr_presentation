@@ -90,10 +90,9 @@ You have to do it only once.</p>
     <h2>Why to use the <code>acsdata</code> function?</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
+    <ul>
 <li>To download the data can be slow, specially when there are many geographic/administrative levels</li>
-<li>A better approach might be to download the data first, and then use them as input with the <code>sumacs</code> function </li>
-</ol>
+<li><p>A better approach might be to download the data first, and then use them as input with the <code>sumacs</code> function </p>
 
 <pre><code class="r">d &lt;- acsdata(&quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, level = &quot;county&quot;)
 </code></pre>
@@ -102,12 +101,17 @@ You have to do it only once.</p>
 ## [1] &quot;. . . . . .  Levels : 1&quot;
 ## [1] &quot;. . . . . .  Getting county data&quot;
 ## [1] &quot;. . . . . .  Done!&quot;
-</code></pre>
+</code></pre></li>
+<li><p>This will create a list with ACS objects.</p></li>
+</ul>
 
-<ol>
-<li>This will create a list with ACS objects.</li>
-</ol>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<slide class="" id="slide-4" style="background:;">
+  <article data-timings="">
+    
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -132,6 +136,12 @@ You have to do it only once.</p>
       <a href="#" target="_self" rel='tooltip' 
         data-slide=3 title='Why to use the <code>acsdata</code> function?'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title=''>
+         4
       </a>
     </li>
   </ul>
