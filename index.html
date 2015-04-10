@@ -232,7 +232,7 @@ tract = 950501, one.zero = TRUE)
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>one.zero = FALSE</p>
+<li><p><code>one.zero = FALSE</code></p>
 
 <pre><code class="r">( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2 + 5.4711125 ^ 2 ) - 
 ( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546 ) * 1.645
@@ -240,7 +240,7 @@ tract = 950501, one.zero = TRUE)
 
 <pre><code>## [1] 0.02518932
 </code></pre></li>
-<li><p>one.zero = TRUE</p>
+<li><p><code>one.zero = TRUE</code></p>
 
 <pre><code class="r">( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2) - 
 ( 0.0226390685640362 ^2 * 102.1277 ^ 2 )) / 1546 ) * 1.645 
@@ -256,7 +256,7 @@ tract = 950501, one.zero = TRUE)
 
 <slide class="" id="slide-9" style="background:;">
   <hgroup>
-    <h2>Some options: <code>one.zero</code> and <code>ratio</code></h2>
+    <h2>Some options: <code>ratio</code> and <code>one.zero = FALSE</code></h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -285,7 +285,7 @@ tract = 950501, one.zero = FALSE)
 
 <slide class="" id="slide-10" style="background:;">
   <hgroup>
-    <h2>Some options: <code>one.zero</code> and <code>ratio</code></h2>
+    <h2>Some options: <code>ratio</code> and <code>one.zero = TRUE</code></h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -314,7 +314,7 @@ tract = 950501, one.zero = TRUE)
 
 <slide class="" id="slide-11" style="background:;">
   <hgroup>
-    <h2>Some options: <code>one.zero</code> and <code>agg</code></h2>
+    <h2>Some options: <code>agg</code> and <code>one.zero = FALSE</code></h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -342,7 +342,7 @@ tract = 950501, one.zero = FALSE)
 
 <slide class="" id="slide-12" style="background:;">
   <hgroup>
-    <h2>Some options: <code>one.zero</code> and <code>agg</code></h2>
+    <h2>Some options: <code>agg</code> and <code>one.zero = TRUE</code></h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -375,7 +375,7 @@ tract = 950501, one.zero = TRUE)
   <article data-timings="">
     <ul>
 <li><p>When the square root of the standard error formula doesn&#39;t exist (e.g., square root of a negative number), the ratio formula is used  instead.  </p></li>
-<li><p>This adjustment is performed unit by unit, row by row.  </p></li>
+<li><p>This adjustment is performed <strong>unit by unit</strong>, <strong>row by row</strong>.  </p></li>
 <li><p>There are some cases where the <code>one.zero</code> option makes the square root undefinable. In those cases, the function uses the &quot;ratio&quot; formula to estimate the standard errors. Exists the possibility that the &quot;ratio&quot; estimates are higher than the &quot;proportion&quot; estimates without the <code>one.zero</code> option.  </p></li>
 </ul>
 
@@ -425,6 +425,16 @@ wi_acs &lt;- acsdata(sheet[, formula], level = levels)
 save(wi_acs, file = &quot;wi_acs.rd&quot;) # save data
 </code></pre>
 
+<ul>
+<li>Define all levels in a vector</li>
+</ul>
+
+<pre><code class="r"># create level vector
+levels &lt;- c(&quot;state&quot;, &quot;county&quot;, &quot;county.subdivision&quot;, 
+  &quot;tract&quot;, &quot;block.group&quot;, &quot;congressional.district&quot;, 
+  &quot;school.district.secondary&quot;, &quot;school.district.elementary&quot;)
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -435,17 +445,11 @@ save(wi_acs, file = &quot;wi_acs.rd&quot;) # save data
   </hgroup>
   <article data-timings="">
     <ul>
-<li>Define all levels in a vector</li>
 <li>Use the corresponding columns and fields to create indicators</li>
 <li>Open the output file in Excel</li>
 </ul>
 
-<pre><code class="r"># create level vector
-levels &lt;- c(&quot;state&quot;, &quot;county&quot;, &quot;county.subdivision&quot;, 
-  &quot;tract&quot;, &quot;block.group&quot;, &quot;congressional.district&quot;, 
-  &quot;school.district.secondary&quot;, &quot;school.district.elementary&quot;)
-
-# compute indicators and export the data
+<pre><code class="r"># compute indicators and export the data
 out &lt;- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type], 
     level = levels, one.zero = TRUE, data = wi_acs, file = &quot;output.csv&quot;)
 </code></pre>
@@ -475,8 +479,8 @@ out &lt;- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type],
 <li>Reads formulas directly</li>
 <li>Different formats for outputs (wide and long), exports the data</li>
 <li>Easy way to adjust MOEs to different confidence levels</li>
-<li><em>Ratio</em> adjustment of standard errors per unit</li>
-<li><em>zero option</em> for proportions, ratios and aggregations</li>
+<li><strong>Ratio</strong> adjustment of standard errors per unit</li>
+<li><strong>zero option</strong> for proportions, ratios and aggregations</li>
 </ul></li>
 <li><p>Limitations</p>
 
@@ -546,25 +550,25 @@ out &lt;- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type],
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Some options: <code>one.zero</code> and <code>ratio</code>'>
+        data-slide=9 title='Some options: <code>ratio</code> and <code>one.zero = FALSE</code>'>
          9
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Some options: <code>one.zero</code> and <code>ratio</code>'>
+        data-slide=10 title='Some options: <code>ratio</code> and <code>one.zero = TRUE</code>'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Some options: <code>one.zero</code> and <code>agg</code>'>
+        data-slide=11 title='Some options: <code>agg</code> and <code>one.zero = FALSE</code>'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Some options: <code>one.zero</code> and <code>agg</code>'>
+        data-slide=12 title='Some options: <code>agg</code> and <code>one.zero = TRUE</code>'>
          12
       </a>
     </li>

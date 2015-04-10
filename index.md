@@ -378,7 +378,55 @@ save(wi_acs, file = "wi_acs.rd") # save data
 - Define all levels in a vector
 
 
+```r
+# create level vector
+levels <- c("state", "county", "county.subdivision", 
+  "tract", "block.group", "congressional.district", 
+  "school.district.secondary", "school.district.elementary")
+```
 
 
 
 
+--- 
+
+
+## Using your Excel file
+
+
+- Use the corresponding columns and fields to create indicators
+- Open the output file in Excel
+
+
+```r
+# compute indicators and export the data
+out <- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type], 
+    level = levels, one.zero = TRUE, data = wi_acs, file = "output.csv")
+```
+
+```
+## [1] ". . . . . .  ACS variables : 266"
+## [1] ". . . . . .  Levels : 8"
+## [1] ". . . . . .  New variables : 90"
+## [1] ". . . . . .  Creating variables"
+## [1] ". . . . . .  Formatting output"
+## [1] ". . . . . .  Data exported to a CSV file! Done!"
+```
+
+---
+
+## Conclusions
+
+- Strengths
+    - Automatized and tailored way to obtain indicators
+    - Reads formulas directly
+    - Different formats for outputs (wide and long), exports the data
+    - Easy way to adjust MOEs to different confidence levels
+    - __Ratio__ adjustment of standard errors per unit
+    - __zero option__ for proportions, ratios and aggregations
+
+- Limitations
+    - It depends heavily on the ACS package
+    - Not the fastest function (loops involved despite some vectorization)
+    - It takes less than a minute to create 90 indicators
+    - Limited to only 8 levels

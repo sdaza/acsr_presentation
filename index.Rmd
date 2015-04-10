@@ -269,7 +269,7 @@ save(wi_acs, file = "wi_acs.rd") # save data
 levels <- c("state", "county", "county.subdivision", 
   "tract", "block.group", "congressional.district", 
   "school.district.secondary", "school.district.elementary")
-``
+```
 
 ```{r, echo = FALSE}
 load(paste0(path, "wi_acs.rdata")) # load data
