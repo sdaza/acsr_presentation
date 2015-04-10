@@ -103,17 +103,22 @@ varname = "langspan0913", method = "prop", data = d, file = "d.csv")
 ## Some options: `one.zero`
 
 ```{r, warning=FALSE, message=FALSE, results="hide"}
-tab1 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", varname = "langspan0913", 
-  method = "prop", level = "tract", county = 1, tract = 950501, one.zero = FALSE)
-tab1[, c(1:4,6, 11:12), with = FALSE]
+tab1 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
+varname = "langspan0913", method = "prop", level = "tract", county = 1, 
+tract = 950501, one.zero = FALSE)
 ```
 
-```{r, warning=FALSE, message=FALSE}
-tab2 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", varname = "langspan0913", 
- method = "prop", level = "tract", county = 1, tract = 950501, one.zero = TRUE)
-  tab2[, c(1:4,6, 11:12), with = FALSE]
+```{r}
+  tab1[, c(1,6, 11:12), with = FALSE]
 ```
 
-   $$\frac{1}{2}$$
+```{r, warning=FALSE, message=FALSE,  results="hide"}
+tab2 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
+varname = "langspan0913", method = "prop", level = "tract", county = 1, 
+tract = 950501, one.zero = TRUE)
+```
+```{r}
+  tab2[, c(1,6, 11:12), with = FALSE]
+```
 
 ---
