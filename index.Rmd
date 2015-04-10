@@ -31,9 +31,6 @@ devtools::install_github("sdaza/acsr")
 
 ## Load `acsr` and help files
 
-```
-library(acsr)
-```
 
 Remember to set the API key for the `acs` package.
 You have to do it only once.
@@ -44,6 +41,7 @@ api.key.install(key="*")
 
 Explore help files of the main functions: 
 ```
+library(acsr)
 ?acsdata
 ?sumacs
 ```
@@ -55,14 +53,12 @@ Explore help files of the main functions:
 1. To download the data can be slow, specially when there are many geographic/administrative levels
 2. A better approach might be to download the data first, and then use them as input with the `sumacs` function 
 
-```
-acsdata(formula, level = "county", endyear = 2013, span = 5,
-  state = "WI", county = "*", county_subdivision = "*", tract = "*",
-  block_group = "*", congressional_district = "*",
-  school_district_secondary = "*", school_district_elementary = "*")
+```{r, echo=FALSE }
+library(acsr)
 ```
 
+
 ```{r }
-library(acsr)
-acsdata("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", level = "county")
+d <- acsdata("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", level = "county")
+str(d)
 ```

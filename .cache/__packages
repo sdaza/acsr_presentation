@@ -1,12 +1,5 @@
 base
-methods
-datasets
-utils
-grDevices
-graphics
-stats
 data.table
-grid
 survey
 lattice
 survival
