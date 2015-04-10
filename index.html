@@ -180,10 +180,14 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.
 
 <slide class="" id="slide-6" style="background:;">
   <hgroup>
-    <h2>Some options: <code>file</code> (csv)</h2>
+    <h2>Some options: <code>file</code></h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
+    <ul>
+<li>Define a CSV where to export the output</li>
+</ul>
+
+<pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = &quot;d.csv&quot;)
 </code></pre>
 
@@ -201,10 +205,12 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = 
 
 <slide class="" id="slide-7" style="background:;">
   <hgroup>
-    <h2>Some options: <code>one.zero</code> (TRUE or FALSE)</h2>
+    <h2>Some options: <code>one.zero</code></h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">tab1 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
+    <h2>- Different ways to estimate standard errors</h2>
+
+<pre><code class="r">tab1 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, level = &quot;tract&quot;, county = 1, 
 tract = 950501, one.zero = FALSE)
 </code></pre>
@@ -260,7 +266,7 @@ tract = 950501, one.zero = TRUE)
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>method = &quot;ratio&quot; and one.zero = FALSE</p>
+<li><p><code>method = &quot;ratio&quot;</code> and <code>one.zero = FALSE</code></p>
 
 <pre><code class="r">tab3 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;ratio&quot;, level = &quot;tract&quot;, county = 1, 
@@ -289,7 +295,7 @@ tract = 950501, one.zero = FALSE)
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>method = &quot;ratio&quot; and one.zero = TRUE </p>
+<li><p><code>method = &quot;ratio&quot;</code> and <code>one.zero = TRUE</code> </p>
 
 <pre><code class="r">tab3 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;ratio&quot;, level = &quot;tract&quot;, county = 1, 
@@ -318,7 +324,7 @@ tract = 950501, one.zero = TRUE)
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>method = &quot;agg&quot; and one.zero = FALSE </p>
+<li><p><code>method = &quot;agg&quot;</code> and <code>one.zero = FALSE</code> </p>
 
 <pre><code class="r">tab4 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048)&quot;, 
 varname = &quot;test&quot;, method = &quot;agg&quot;, level = &quot;tract&quot;, county = 1, 
@@ -346,7 +352,7 @@ tract = 950501, one.zero = FALSE)
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>method = &quot;agg&quot; and one.zero = TRUE </p>
+<li><p><code>method = &quot;agg&quot;</code> and <code>one.zero = TRUE</code> </p>
 
 <pre><code class="r">tab4 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048)&quot;, 
 varname = &quot;test&quot;, method = &quot;agg&quot;, level = &quot;tract&quot;, county = 1, 
@@ -370,7 +376,7 @@ tract = 950501, one.zero = TRUE)
 
 <slide class="" id="slide-13" style="background:;">
   <hgroup>
-    <h2>Details...</h2>
+    <h2>To note</h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -532,13 +538,13 @@ out &lt;- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type],
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Some options: <code>file</code> (csv)'>
+        data-slide=6 title='Some options: <code>file</code>'>
          6
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Some options: <code>one.zero</code> (TRUE or FALSE)'>
+        data-slide=7 title='Some options: <code>one.zero</code>'>
          7
       </a>
     </li>
@@ -574,7 +580,7 @@ out &lt;- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type],
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='Details...'>
+        data-slide=13 title='To note'>
          13
       </a>
     </li>

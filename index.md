@@ -137,7 +137,9 @@ tab[1:3, c(1:4,11:13), with = FALSE]
 
 --- 
 
-## Some options: `file` (csv)
+## Some options: `file` 
+
+- Define a CSV where to export the output
 
 
 ```r
@@ -156,8 +158,10 @@ varname = "langspan0913", method = "prop", data = d, file = "d.csv")
 
 --- 
 
-## Some options: `one.zero` (TRUE or FALSE)
+## Some options: `one.zero`
 
+- Different ways to estimate standard errors
+- 
 
 ```r
 tab1 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
@@ -216,7 +220,7 @@ tract = 950501, one.zero = TRUE)
 
 ## Some options: `ratio` and `one.zero` 
 
-- method = "ratio" and one.zero = FALSE
+- `method = "ratio"` and `one.zero = FALSE`
 
     
     ```r
@@ -245,7 +249,7 @@ tract = 950501, one.zero = TRUE)
 
 ## Some options: `ratio` and `one.zero` 
 
-- method = "ratio" and one.zero = TRUE 
+- `method = "ratio"` and `one.zero = TRUE` 
 
     
     ```r
@@ -274,7 +278,7 @@ tract = 950501, one.zero = TRUE)
 
 ## Some options: `agg` and `one.zero` 
 
-- method = "agg" and one.zero = FALSE 
+- `method = "agg"` and `one.zero = FALSE` 
 
     
     ```r
@@ -302,7 +306,7 @@ tract = 950501, one.zero = TRUE)
 
 ## Some options: `agg` and `one.zero` 
 
-- method = "agg" and one.zero = TRUE 
+- `method = "agg"` and `one.zero = TRUE` 
 
     
     ```r
@@ -328,7 +332,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Details...
+## To note
 
 - When the square root of the standard error formula doesn't exist (e.g., square root of a negative number), the ratio formula is used  instead.  
 
