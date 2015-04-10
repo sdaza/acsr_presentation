@@ -112,29 +112,25 @@ devtools::install_github(&quot;sdaza/acsr&quot;)
 
 <slide class="" id="slide-4" style="background:;">
   <hgroup>
-    <h3>Let&#39;s now use the <code>sumacs</code>function</h3>
+    <h2>Let&#39;s now use the <code>sumacs</code>function</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code>```r
-tab &lt;- sumacs(&quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
+    <pre><code class="r">tab &lt;- sumacs(&quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
 &quot;langspan0913&quot;, &quot;prop&quot;, data = d)
-```
+</code></pre>
 
-```
-## [1] &quot;. . . . . .  ACS variables : 4&quot;
+<pre><code>## [1] &quot;. . . . . .  ACS variables : 4&quot;
 ## [1] &quot;. . . . . .  Levels : 1&quot;
 ## [1] &quot;. . . . . .  New variables : 1&quot;
 ## [1] &quot;. . . . . .  Creating variables&quot;
 ## [1] &quot;. . . . . .  Formatting output&quot;
 ## [1] &quot;. . . . . .  Done!&quot;
-```
+</code></pre>
 
-```r
-tab
-```
+<pre><code class="r">tab
+</code></pre>
 
-```
-##     stfid sumlevel st_fips cnty_fips cnty_sub_fips tract_fips block_group
+<pre><code>##     stfid sumlevel st_fips cnty_fips cnty_sub_fips tract_fips block_group
 ##  1: 55001      050      55       001            NA         NA          NA
 ##  2: 55003      050      55       003            NA         NA          NA
 ##  3: 55005      050      55       005            NA         NA          NA
@@ -282,7 +278,6 @@ tab
 ## 71:        NA           NA           NA  0.025226661      0.002552703
 ## 72:        NA           NA           NA  0.019142922      0.002800865
 ##     cong_dist sch_dist_sec sch_dist_ele langspan0913 langspan0913_moe
-```
 </code></pre>
 
   </article>

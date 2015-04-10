@@ -65,11 +65,11 @@ api.key.install(key="*")
 
 ---
 
-### Let's now use the `sumacs`function
+## Let's now use the `sumacs`function
 
-    ```{r }
-    tab <- sumacs("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
-    "langspan0913", "prop", data = d)
-    tab
-    ```
+```{r }
+tab <- sumacs("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
+"langspan0913", "prop", data = d)
+tab
+```
 
