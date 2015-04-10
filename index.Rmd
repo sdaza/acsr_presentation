@@ -117,8 +117,15 @@ tab2 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001",
 varname = "langspan0913", method = "prop", level = "tract", county = 1, 
 tract = 950501, one.zero = TRUE)
 ```
-```{r, results = "asis", echo = FALSE}
+
+```{r, echo = FALSE}
 tab2[, c(1,6, 11:12), with = FALSE]
 ```
+
+---
+
+## Some options: `one.zero`
+
+test
 
 ---
