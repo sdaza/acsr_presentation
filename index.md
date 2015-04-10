@@ -1,6 +1,6 @@
 ---
 title       : acsr package
-subtitle    : some examples
+subtitle    : how to use it
 author      : Sebastian Daza
 job         : PhD Candidate
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
