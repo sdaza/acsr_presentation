@@ -31,11 +31,10 @@ devtools::install_github("sdaza/acsr")
 
 ## Load `acsr` and help files
 
-
 - Remember to set the API key for the `acs` package. You have to do it only once.
 
     ```
-    api.key.install(key="*")
+    api.key.install(key="")
     ```
 
 - Explore help files of the main functions: 
@@ -45,8 +44,13 @@ devtools::install_github("sdaza/acsr")
     ?acsdata
     ?sumacs
     ```
+- Check defaults!
+    - State = WI
+    - Year  = 2013
+    - Span = 5
+    - Level = county
 
-----
+---
 
 ## Why to use the `acsdata` function?
 
