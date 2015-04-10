@@ -47,14 +47,15 @@ devtools::install_github("sdaza/acsr")
     ?acsdata
     ?sumacs
     ```
+
 - Check defaults!
- 
     ```
     State = WI
     Year  = 2013
     Span = 5
     Level = county
     ```
+    
 ---
 
 ## Why to use the `acsdata` function?
@@ -398,7 +399,6 @@ str(sheet)
 
 
 --- 
-
 
 ## Using an Excel file
 
