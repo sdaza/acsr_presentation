@@ -4,8 +4,6 @@ subtitle    :
 author      : Sebastian Daza
 job         : Ph.D. Student
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
-theme       : 
-
 highlighter : highlight.js
 hitheme     : solarized_light
 widgets     : []            # {mathjax, quiz, bootstrap}
