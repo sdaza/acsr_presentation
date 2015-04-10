@@ -34,17 +34,17 @@ devtools::install_github("sdaza/acsr")
 
 - Remember to set the API key for the `acs` package. You have to do it only once.
 
-```
-api.key.install(key="*")
-```
+    ```
+    api.key.install(key="*")
+    ```
 
 - Explore help files of the main functions: 
 
-```
-library(acsr)
-?acsdata
-?sumacs
-```
+    ```
+    library(acsr)
+    ?acsdata
+    ?sumacs
+    ```
 
 ----
 
@@ -57,7 +57,7 @@ library(acsr)
 
     
     ```r
-    d <- acsdata("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", level = "county")
+    d <- acsdata(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", level = "county")
     ```
     
     ```
@@ -75,8 +75,8 @@ library(acsr)
 
 
 ```r
-tab <- sumacs("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
-"langspan0913", "prop", data = d)
+tab <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
+varname = "langspan0913", method = "prop", data = d)
 ```
 
 ```
