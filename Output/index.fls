@@ -4,3 +4,5 @@ INPUT /usr/local/texlive/2014/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2014/texmf-var/web2c/pdftex/pdflatex.fmt
 INPUT /Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/acsr_presentation/index.Rmd
 OUTPUT Output/index.log
+OUTPUT Output/index.pdf
+INPUT /usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map

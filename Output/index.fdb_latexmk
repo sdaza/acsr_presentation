@@ -1,11 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1428691507 "/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/acsr_presentation/index.Rmd" "Output/index.pdf" "index" 1428691507
-  "/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/acsr_presentation/index.Rmd" 1428691506 1571 21491170de288018400b8ab38586e28b ""
+["pdflatex"] 1428705900 "/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/acsr_presentation/index.Rmd" "Output/index.pdf" "index" 1428705902
+  "/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/acsr_presentation/index.Rmd" 1428705901 7620 35c933c6dee0934ea3f75bfc382ab502 ""
   "/usr/local/texlive/2014/texmf-dist/web2c/texmf.cnf" 1398200874 31722 4f52421e59a4b9e910cf18e64c1f2b4a ""
+  "/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1401025944 1445653 26a0aacf3d70032b1ec192e8c7792117 ""
   "/usr/local/texlive/2014/texmf-var/web2c/pdftex/pdflatex.fmt" 1401025990 3832012 904d82bdcc8abf2b1cd296990b82553b ""
   "/usr/local/texlive/2014/texmf.cnf" 1401025936 577 a59edbde8d3a8c549d0eeaab1739e2ff ""
   "Output/index.aux" 1428691507 8 a94a2480d3289e625eea47cd1b285758 ""
-  "index.Rmd" 1428691506 1571 21491170de288018400b8ab38586e28b ""
+  "index.Rmd" 1428705901 7620 35c933c6dee0934ea3f75bfc382ab502 ""
   (generated)
   "Output/index.log"
   "Output/index.pdf"

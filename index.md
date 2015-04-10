@@ -13,10 +13,10 @@ widgets     : [mathjax]  # {mathjax, quiz, bootstrap}
 
 
 ```
-# set server
+# set a server
 options(repos=structure(c(CRAN="http://rweb.quant.ku.edu/cran/")))
 
-# install from cran
+# install from CRAN
 install.packages("devtools")
 install.packages("acs")
 
