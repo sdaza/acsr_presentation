@@ -95,8 +95,14 @@ You have to do it only once.</p>
     <ol>
 <li>To download the data can be slow, specially when there are many geographic/administrative levels</li>
 <li>A better approach might be to download the data first, and then use them as input with the <code>sumacs</code> function </li>
-<li>Main arguments of the <code>acsdata</code> function are:</li>
+<li>Main arguments of the <code>acsdata</code> function are...</li>
 </ol>
+
+<pre><code>acsdata(formula, level = &quot;county&quot;, endyear = 2013, span = 5,
+  state = &quot;WI&quot;, county = &quot;*&quot;, county_subdivision = &quot;*&quot;, tract = &quot;*&quot;,
+  block_group = &quot;*&quot;, congressional_district = &quot;*&quot;,
+  school_district_secondary = &quot;*&quot;, school_district_elementary = &quot;*&quot;)
+</code></pre>
 
   </article>
   <!-- Presenter Notes -->
