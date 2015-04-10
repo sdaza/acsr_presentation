@@ -144,7 +144,7 @@ tab[1:3, c(1:4,11:13), with = FALSE]
 
 ## Some options: `file` 
 
-- Define a CSV where to export the output
+- Define a CSV file to export the output
 
 
 ```r

@@ -95,7 +95,7 @@ tab[1:3, c(1:4,11:13), with = FALSE]
 
 ## Some options: `file` 
 
-- Define a CSV where to export the output
+- Define a CSV file to export the output
 
 ```{r }
 tab <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
