@@ -216,13 +216,19 @@ tract = 950501, one.zero = TRUE)
 
 ## Some options: `one.zero` and `ratio`
 
-- method = "ratio"
+- method = "ratio" and one.zero = FALSE
 
     
     ```r
     tab3 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
     varname = "langspan0913", method = "ratio", level = "tract", county = 1, 
     tract = 950501, one.zero = FALSE)
+    ```
+
+    
+    ```
+    ##          stfid tract_fips langspan0913 langspan0913_moe
+    ## 1: 55001950501     950501   0.02263907       0.02542847
     ```
 
 - one.zero = FALSE
@@ -235,6 +241,37 @@ tract = 950501, one.zero = TRUE)
     
     ```
     ## [1] 0.02542846
+    ```
+
+---
+
+## Some options: `one.zero` and `ratio`
+
+- method = "ratio" and one.zero = TRUE 
+- 
+    
+    ```r
+    tab3 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
+    varname = "langspan0913", method = "ratio", level = "tract", county = 1, 
+    tract = 950501, one.zero = TRUE)
+    ```
+
+    
+    ```
+    ##          stfid tract_fips langspan0913 langspan0913_moe
+    ## 1: 55001950501     950501   0.02263907       0.02475313
+    ```
+
+- one.zero = TRUE
+
+    
+    ```r
+    ( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2 ) 
+    + ( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546) * 1.645
+    ```
+    
+    ```
+    ## [1] 0.02475312
     ```
 
 ---
