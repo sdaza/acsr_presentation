@@ -167,8 +167,8 @@ tab2[, c(1,6, 11:12), with = FALSE]
 
 ## Some options: `one.zero` and `ratio`
 
-- method = "ratio" and one.zero = TRUE 
-- 
+- method = ratio and one.zero = TRUE 
+
     ```{r, warning=FALSE, message=FALSE,  results="hide"}
     tab3 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
     varname = "langspan0913", method = "ratio", level = "tract", county = 1, 

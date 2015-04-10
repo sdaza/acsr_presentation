@@ -247,8 +247,8 @@ tract = 950501, one.zero = TRUE)
 
 ## Some options: `one.zero` and `ratio`
 
-- method = "ratio" and one.zero = TRUE 
-- 
+- method = ratio and one.zero = TRUE 
+
     
     ```r
     tab3 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
