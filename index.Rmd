@@ -7,7 +7,7 @@ framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js
 hitheme     : solarized_light
 widgets     : []            # {mathjax, quiz, bootstrap}
----
+--- 
 
 ## Install `acsr` package in `R`
 
@@ -26,7 +26,7 @@ devtools::install_github("Rdatatable/data.table", build_vignettes = FALSE)
 devtools::install_github("sdaza/acsr")
 ```
 
---- .class #install
+---
 
 ## Load `acsr` and help files
 
@@ -54,21 +54,3 @@ Explore help files of the main functions:
 1. To download the data can be slow, specially when there are many geographic levels
 2. Better, to download the data first, then use them as input 
 3. Main arguments of the `acsdata` function
-
-
----
-
-<style>
-.title-slide {
-  background-color: #CBE7A5; /* #EDE0CF; ; #CA9F9D*/
-}
-
-.title-slide hgroup > h1{
- font-family: 'Oswald', 'Helvetica', sanserif; 
-}
-
-.title-slide hgroup > h1, 
-.title-slide hgroup > h2 {
-  color: #535E43 ;  /* ; #EF5150*/
-}
-</style>
