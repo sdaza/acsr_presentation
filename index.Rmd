@@ -280,7 +280,6 @@ load(paste0(path, "wi_acs.rdata")) # load data
 levels <- c("state", "county", "county.subdivision", 
   "tract", "block.group", "congressional.district", 
   "school.district.secondary", "school.district.elementary")
-```
 
 # compute indicators and export the data
 out <- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type], 

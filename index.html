@@ -444,14 +444,19 @@ save(wi_acs, file = &quot;wi_acs.rd&quot;) # save data
 levels &lt;- c(&quot;state&quot;, &quot;county&quot;, &quot;county.subdivision&quot;, 
   &quot;tract&quot;, &quot;block.group&quot;, &quot;congressional.district&quot;, 
   &quot;school.district.secondary&quot;, &quot;school.district.elementary&quot;)
+
+# compute indicators and export the data
+out &lt;- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type], 
+    level = levels, one.zero = TRUE, data = wi_acs, file = &quot;output.csv&quot;)
 </code></pre>
 
-<h1>compute indicators and export the data</h1>
-
-<p>out &lt;- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type], 
-    level = levels, one.zero = TRUE, data = wi_acs, file = &quot;output.csv&quot;)</p>
-
-<pre><code></code></pre>
+<pre><code>## [1] &quot;. . . . . .  ACS variables : 266&quot;
+## [1] &quot;. . . . . .  Levels : 8&quot;
+## [1] &quot;. . . . . .  New variables : 90&quot;
+## [1] &quot;. . . . . .  Creating variables&quot;
+## [1] &quot;. . . . . .  Formatting output&quot;
+## [1] &quot;. . . . . .  Data exported to a CSV file! Done!&quot;
+</code></pre>
 
   </article>
   <!-- Presenter Notes -->

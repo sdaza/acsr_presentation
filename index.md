@@ -392,11 +392,19 @@ save(wi_acs, file = "wi_acs.rd") # save data
 levels <- c("state", "county", "county.subdivision", 
   "tract", "block.group", "congressional.district", 
   "school.district.secondary", "school.district.elementary")
-```
 
 # compute indicators and export the data
 out <- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type], 
     level = levels, one.zero = TRUE, data = wi_acs, file = "output.csv")
+```
+
+```
+## [1] ". . . . . .  ACS variables : 266"
+## [1] ". . . . . .  Levels : 8"
+## [1] ". . . . . .  New variables : 90"
+## [1] ". . . . . .  Creating variables"
+## [1] ". . . . . .  Formatting output"
+## [1] ". . . . . .  Data exported to a CSV file! Done!"
 ```
 
 ---
