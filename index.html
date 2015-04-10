@@ -260,7 +260,7 @@ tract = 950501, one.zero = TRUE)
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>method = &quot;ratio&quot; and one.zero = FALSE</p>
+<li><p>method = ratio and one.zero = FALSE</p>
 
 <pre><code class="r">tab3 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;ratio&quot;, level = &quot;tract&quot;, county = 1, 
@@ -290,7 +290,7 @@ tract = 950501, one.zero = FALSE)
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>method = ratio and one.zero = TRUE </p>
+<li><p>method = &quot;ratio&quot; and one.zero = TRUE </p>
 
 <pre><code class="r">tab3 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;ratio&quot;, level = &quot;tract&quot;, county = 1, 
@@ -315,6 +315,39 @@ tract = 950501, one.zero = TRUE)
 </slide>
 
 <slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Some options: <code>one.zero</code> and <code>aggr</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>method = &quot;aggr&quot; and one.zero = FALSE </p>
+
+<pre><code class="r">tab3 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048)&quot;, 
+varname = &quot;langspan0913&quot;, method = &quot;aggr&quot;, level = &quot;tract&quot;, county = 1, 
+tract = 950501, one.zero = FALSE)
+</code></pre>
+
+<pre><code>## Error in as.vector(p): object &#39;p&#39; not found
+</code></pre>
+
+<pre><code>##          stfid tract_fips langspan0913 langspan0913_moe
+## 1: 55001950501     950501   0.02263907       0.02475313
+</code></pre></li>
+<li><p>one.zero = FALSE</p>
+
+<pre><code class="r">( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2 ) 
++ ( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546) * 1.645
+</code></pre>
+
+<pre><code>## [1] 0.02475312
+</code></pre></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
   <article data-timings="">
     
   </article>
@@ -387,8 +420,14 @@ tract = 950501, one.zero = TRUE)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title=''>
+        data-slide=11 title='Some options: <code>one.zero</code> and <code>aggr</code>'>
          11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title=''>
+         12
       </a>
     </li>
   </ul>
