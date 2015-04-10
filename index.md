@@ -336,28 +336,3 @@ tract = 950501, one.zero = TRUE)
 
 - There are some cases where the `one.zero` option makes the square root undefinable. In those cases, the function uses the "ratio" formula to estimate the standard errors. Exists the possibility that the "ratio" estimates are higher than the "proportion" estimates not using the `one.zero` option.  
 
----
-
-## Using your Excel file
-
-- After adjusting some minor format issues, I save the Excel file as a CSV file
-- I read that file in `R`
-- I used the corresponding variables to create all indicators
-
-
-
-  
-  ```r
-    sheet <- fread(paste0(path, "moe.csv"))
-    str(sheet)
-  ```
-  
-  ```
-  ## Classes 'data.table' and 'data.frame':	90 obs. of  5 variables:
-  ##  $ destination: chr  "Food_Sec" "Food_Sec" "Food_Sec" "Food_Sec" ...
-  ##  $ myfield    : chr  "drive0913" "edass0913" "edcoll0913" "edhs0913" ...
-  ##  $ type       : chr  "Prop" "Prop" "Prop" "Prop" ...
-  ##  $ formula    : chr  "(b08101_009 + b08101_017) / b08101_001 * 100" "(b15002_014 + b15002_031) / b15002_001 * 100" "(b15002_015 + b15002_032 + b15002_016 + b15002_017 + b15002_018 + b15002_033 + b15002_034 + b15002_035) / b15002_001 * 100" "(b15002_011 + b15002_028) / b15002_001 * 100" ...
-  ##  $ moe_varname: chr  "drive0913_moe" "edass0913_moe" "edcoll0913_moe" "edhs0913_moe" ...
-  ##  - attr(*, ".internal.selfref")=<externalptr>
-  ```
