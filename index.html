@@ -170,36 +170,6 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-6" style="background:;">
-  <hgroup>
-    <h2>Some options: format.out (wide or long)</h2>
-  </hgroup>
-  <article data-timings="">
-    <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
-varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.out = &quot;long&quot;)
-</code></pre>
-
-<pre><code>## [1] &quot;. . . . . .  ACS variables : 4&quot;
-## [1] &quot;. . . . . .  Levels : 1&quot;
-## [1] &quot;. . . . . .  New variables : 1&quot;
-## [1] &quot;. . . . . .  Creating variables&quot;
-## [1] &quot;. . . . . .  Formatting output&quot;
-## [1] &quot;. . . . . .  Done!&quot;
-</code></pre>
-
-<pre><code class="r">tab[1:3, c(1:4,12:13), with = FALSE]
-</code></pre>
-
-<pre><code>##    stfid sumlevel st_fips cnty_fips        est         moe
-## 1: 55001      050      55       001 0.02725587 0.003377554
-## 2: 55003      050      55       003 0.01152700 0.003850785
-## 3: 55005      050      55       005 0.02040295 0.003084028
-</code></pre>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
     <slide class="backdrop"></slide>
   </slides>
   <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
@@ -232,12 +202,6 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.
       <a href="#" target="_self" rel='tooltip' 
         data-slide=5 title='Some options: format.out (wide or long)'>
          5
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Some options: format.out (wide or long)'>
-         6
       </a>
     </li>
   </ul>

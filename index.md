@@ -130,33 +130,3 @@ tab[1:3, c(1:4,12:13), with = FALSE]
 ## 3: 55005      050      55       005 0.02040295 0.003084028
 ```
 
---- 
-
-## Some options: format.out (wide or long)
-
-
-```r
-tab <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
-varname = "langspan0913", method = "prop", data = d, format.out = "long")
-```
-
-```
-## [1] ". . . . . .  ACS variables : 4"
-## [1] ". . . . . .  Levels : 1"
-## [1] ". . . . . .  New variables : 1"
-## [1] ". . . . . .  Creating variables"
-## [1] ". . . . . .  Formatting output"
-## [1] ". . . . . .  Done!"
-```
-
-```r
-tab[1:3, c(1:4,12:13), with = FALSE]
-```
-
-```
-##    stfid sumlevel st_fips cnty_fips        est         moe
-## 1: 55001      050      55       001 0.02725587 0.003377554
-## 2: 55003      050      55       003 0.01152700 0.003850785
-## 3: 55005      050      55       005 0.02040295 0.003084028
-```
-
