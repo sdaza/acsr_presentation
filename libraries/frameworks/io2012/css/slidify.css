@@ -352,7 +352,7 @@ pre code {
 }
 
 .title-slide {
-  background-color: #EDE0CF;
+  background-color: white
   /* background-image:url(http://goo.gl/EpXln); */
 }
 
@@ -362,7 +362,7 @@ pre code {
 
 .title-slide hgroup > h1, 
 .title-slide hgroup > h2 {
-  color:  #EF5150*/
+  color:  white
 }
 
 
