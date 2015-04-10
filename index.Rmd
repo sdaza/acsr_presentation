@@ -1,6 +1,6 @@
 ---
-title       : acsr examples
-subtitle    : 
+title       : acsr package
+subtitle    : some examples
 author      : Sebastian Daza
 job         : Ph.D. Student
 framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
@@ -34,7 +34,7 @@ devtools::install_github("sdaza/acsr")
 library(acsr)
 ```
 
-Remember to set the API key for the `acs` package.  
+Remember to set the API key for the `acs` package.
 You have to do it just once.
 
 ```
