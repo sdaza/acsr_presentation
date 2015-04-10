@@ -120,13 +120,13 @@ varname = "langspan0913", method = "prop", data = d, format.out = "long")
 ```
 
 ```r
-tab[1:3, c(1:4,12:13), with = FALSE]
+tab[1:3, c(1:4,11:13), with = FALSE]
 ```
 
 ```
-##    stfid sumlevel st_fips cnty_fips        est         moe
-## 1: 55001      050      55       001 0.02725587 0.003377554
-## 2: 55003      050      55       003 0.01152700 0.003850785
-## 3: 55005      050      55       005 0.02040295 0.003084028
+##    stfid sumlevel st_fips cnty_fips     var_name        est         moe
+## 1: 55001      050      55       001 langspan0913 0.02725587 0.003377554
+## 2: 55003      050      55       003 langspan0913 0.01152700 0.003850785
+## 3: 55005      050      55       005 langspan0913 0.02040295 0.003084028
 ```
 
