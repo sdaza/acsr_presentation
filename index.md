@@ -231,8 +231,6 @@ tract = 950501, one.zero = TRUE)
     ## 1: 55001950501     950501   0.02263907       0.02542847
     ```
 
-- one.zero = FALSE
-
     
     ```r
     ( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2 + 5.4711125 ^ 2 ) 
@@ -262,8 +260,6 @@ tract = 950501, one.zero = TRUE)
     ## 1: 55001950501     950501   0.02263907       0.02475313
     ```
 
-- one.zero = TRUE
-
     
     ```r
     ( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2 ) 
@@ -276,9 +272,9 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `one.zero` and `aggr`
+## Some options: `one.zero` and `agg`
 
-- method = "aggr" and one.zero = FALSE 
+- method = "agg" and one.zero = FALSE 
 
     
     ```r
@@ -293,16 +289,33 @@ tract = 950501, one.zero = TRUE)
     ## 1: 55001950501     950501   35   39.128
     ```
 
-- one.zero = FALSE
-
     
     ```r
-    ( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2 ) 
-    + ( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546) * 1.645
+    sqrt((5.4711125^2 + 22.4924^2 + 5.4711125^2))  * 1.645
     ```
     
     ```
-    ## [1] 0.02475312
+    ## [1] 39.12798
     ```
 
 ---
+
+## Some options: `one.zero` and `agg`
+
+- method = "agg" and one.zero = TRUE 
+
+    
+    ```r
+    tab4 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048)", 
+    varname = "test", method = "agg", level = "tract", county = 1, 
+    tract = 950501, one.zero = TRUE)
+    ```
+
+    
+    ```
+    ##          stfid tract_fips test test_moe
+    ## 1: 55001950501     950501   35 38.07887
+    ```
+
+
+
