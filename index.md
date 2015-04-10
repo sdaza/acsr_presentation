@@ -166,6 +166,10 @@ tract = 950501, one.zero = FALSE)
 ```
 
 
+```
+##          stfid tract_fips langspan0913 langspan0913_moe
+## 1: 55001950501     950501   0.02263907       0.02518933
+```
 
 
 ```r
@@ -173,6 +177,7 @@ tab2 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001",
 varname = "langspan0913", method = "prop", level = "tract", county = 1, 
 tract = 950501, one.zero = TRUE)
 ```
-
+         stfid tract_fips langspan0913 langspan0913_moe
+1: 55001950501     950501   0.02263907        0.0245074
 
 ---

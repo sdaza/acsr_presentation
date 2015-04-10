@@ -209,10 +209,19 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, level = &quot;tra
 tract = 950501, one.zero = FALSE)
 </code></pre>
 
+<pre><code>##          stfid tract_fips langspan0913 langspan0913_moe
+## 1: 55001950501     950501   0.02263907       0.02518933
+</code></pre>
+
 <pre><code class="r">tab2 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, level = &quot;tract&quot;, county = 1, 
 tract = 950501, one.zero = TRUE)
 </code></pre>
+
+<pre><code>     stfid tract_fips langspan0913 langspan0913_moe
+</code></pre>
+
+<p>1: 55001950501     950501   0.02263907        0.0245074</p>
 
   </article>
   <!-- Presenter Notes -->
