@@ -188,7 +188,7 @@ tract = 950501, one.zero = TRUE)
 
 ## Some options: `one.zero`
 
-- one.zero = FALSE
+- `one.zero = FALSE`
 
     
     ```r
@@ -200,7 +200,7 @@ tract = 950501, one.zero = TRUE)
     ## [1] 0.02518932
     ```
 
-- one.zero = TRUE
+- `one.zero = TRUE`
 
     
     ```r
@@ -214,7 +214,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `one.zero` and `ratio`
+## Some options: `ratio` and `one.zero = FALSE` 
 
 - method = "ratio" and one.zero = FALSE
 
@@ -243,7 +243,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `one.zero` and `ratio`
+## Some options: `ratio` and `one.zero = TRUE` 
 
 - method = "ratio" and one.zero = TRUE 
 
@@ -272,7 +272,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `one.zero` and `agg`
+## Some options: `agg` and `one.zero = FALSE` 
 
 - method = "agg" and one.zero = FALSE 
 
@@ -300,7 +300,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some options: `one.zero` and `agg`
+## Some options: `agg` and `one.zero = TRUE` 
 
 - method = "agg" and one.zero = TRUE 
 
@@ -332,7 +332,7 @@ tract = 950501, one.zero = TRUE)
 
 - When the square root of the standard error formula doesn't exist (e.g., square root of a negative number), the ratio formula is used  instead.  
 
-- This adjustment is performed unit by unit, row by row.  
+- This adjustment is performed __unit by unit__, __row by row__.  
 
 - There are some cases where the `one.zero` option makes the square root undefinable. In those cases, the function uses the "ratio" formula to estimate the standard errors. Exists the possibility that the "ratio" estimates are higher than the "proportion" estimates without the `one.zero` option.  
 
@@ -375,52 +375,10 @@ wi_acs <- acsdata(sheet[, formula], level = levels)
 save(wi_acs, file = "wi_acs.rd") # save data
 ```
 
-
-
---- 
-
-
-## Using your Excel file
-
 - Define all levels in a vector
-- Use the corresponding columns and fields to create indicators
-- Open the output file in Excel
 
 
-```r
-# create level vector
-levels <- c("state", "county", "county.subdivision", 
-  "tract", "block.group", "congressional.district", 
-  "school.district.secondary", "school.district.elementary")
 
-# compute indicators and export the data
-out <- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type], 
-    level = levels, one.zero = TRUE, data = wi_acs, file = "output.csv")
-```
 
-```
-## [1] ". . . . . .  ACS variables : 266"
-## [1] ". . . . . .  Levels : 8"
-## [1] ". . . . . .  New variables : 90"
-## [1] ". . . . . .  Creating variables"
-## [1] ". . . . . .  Formatting output"
-## [1] ". . . . . .  Data exported to a CSV file! Done!"
-```
 
----
 
-## Conclusions
-
-- Strengths
-    - Automatized and tailored way to obtain indicators
-    - Reads formulas directly
-    - Different formats for outputs (wide and long), exports the data
-    - Easy way to adjust MOEs to different confidence levels
-    - *Ratio* adjustment of standard errors per unit
-    - *zero option* for proportions, ratios and aggregations
-
-- Limitations
-    - It depends heavily on the ACS package
-    - Not the fastest function (loops involved despite some vectorization)
-    - It takes less than a minute to create 90 indicators
-    - Limited to only 8 levels
