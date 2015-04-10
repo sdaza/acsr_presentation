@@ -3,7 +3,7 @@ title       : acsr package
 subtitle    : how to use it
 author      : Sebastian Daza
 job         : PhD Candidate
-framework   : shower      # {io2012, html5slides, shower, dzslides, ...}
+framework   : io2012      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js
 hitheme     : solarized_light
 widgets     : [mathjax]  # {mathjax, quiz, bootstrap}     
@@ -55,7 +55,7 @@ devtools::install_github("sdaza/acsr")
     Span = 5
     Level = county
     ```
-    
+
 ---
 
 ## Why to use the `acsdata` function?

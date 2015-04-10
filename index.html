@@ -1,42 +1,50 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
+<!DOCTYPE html>
+<html>
 <head>
-	<title>acsr package</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=1274, user-scalable=no">
-	<meta name="description" content="acsr package">
-	<meta name="author" content="Sebastian Daza">
-	<meta name="generator" content="slidify" />
-	<!-- LOAD STYLE SHEETS -->
-	<link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/shower/themes/ribbon/styles/screen.css">
-	<link rel="stylesheet" media="print"
-	  href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/shower/themes/ribbon/styles/print.css">
-	<link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/css/solarized_light.css">  
-	<!--
-		To apply styles to the certain slides
-		use slide ID to get needed elements
-		-->
-	<style>
-		#Cover h2 {
-      margin:65px 0 0;
-			color:#FFF;
-			text-align:center;
-			font-size:70px;
-			}
-		#FitToWidth h2,
-		#FitToHeight h2 {
-			color:#FFF;
-			text-align:center;
-			}
-	</style> 
+  <title>acsr package</title>
+  <meta charset="utf-8">
+  <meta name="description" content="acsr package">
+  <meta name="author" content="Sebastian Daza">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/css/solarized_light.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/slides" 
+    src="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
 </head>
-<body class="list">
-  <header class="caption">
-  	<h1>acsr package</h1>
-	</header>
-  <section class="slide " id="slide-1">
-  <div>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>acsr package</h1>
+    <h2>how to use it</h2>
+    <p>Sebastian Daza<br/>PhD Candidate</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
     <h2>Install <code>acsr</code> package in <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
     <pre><code class="r"># set a server
 options(repos=structure(c(CRAN=&quot;http://rweb.quant.ku.edu/cran/&quot;)))
 
@@ -51,11 +59,15 @@ devtools::install_github(&quot;Rdatatable/data.table&quot;, build_vignettes = FA
 devtools::install_github(&quot;sdaza/acsr&quot;)
 </code></pre>
 
-  </div>
-</section>
-<section class="slide " id="slide-2">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
     <h2>Load <code>acsr</code> and help files</h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li><p>Remember to set the API key for the <code>acs</code> package. You have to do it only once</p>
 
@@ -76,11 +88,16 @@ Level = county
 </code></pre></li>
 </ul>
 
-<hr>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<h2>Why to use the <code>acsdata</code> function?</h2>
-
-<ul>
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Why to use the <code>acsdata</code> function?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
 <li>To download the data can be slow, specially when there are many geographic/administrative levels</li>
 <li><p>A better approach might be to download the data first, and then use them as input with the <code>sumacs</code> function </p>
 
@@ -96,11 +113,15 @@ Level = county
 <li><p>This will create a list with ACS objects</p></li>
 </ul>
 
-  </div>
-</section>
-<section class="slide " id="slide-3">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
     <h2>Let&#39;s now use the <code>sumacs</code> function</h2>
+  </hgroup>
+  <article data-timings="">
     <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d)
 </code></pre>
@@ -122,11 +143,15 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d)
 ## 3: 55005      050      55       005   0.02040295      0.003084028
 </code></pre>
 
-  </div>
-</section>
-<section class="slide " id="slide-4">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
     <h2>Some options: <code>format.out</code></h2>
+  </hgroup>
+  <article data-timings="">
     <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.out = &quot;long&quot;)
 </code></pre>
@@ -148,11 +173,15 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.
 ## 3: 55005      050      55       005 langspan0913 0.02040295 0.003084028
 </code></pre>
 
-  </div>
-</section>
-<section class="slide " id="slide-5">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
     <h2>Some options: <code>file</code></h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li>Define a CSV where to export the output</li>
 </ul>
@@ -169,11 +198,15 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = 
 ## [1] &quot;. . . . . .  Data exported to a CSV file! Done!&quot;
 </code></pre>
 
-  </div>
-</section>
-<section class="slide " id="slide-6">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
     <h2>Some options: <code>one.zero</code></h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li>Different ways to estimate standard errors</li>
 </ul>
@@ -196,11 +229,15 @@ tract = 950501, one.zero = TRUE)
 ## 1: 55001950501     950501   0.02263907        0.0245074
 </code></pre>
 
-  </div>
-</section>
-<section class="slide " id="slide-7">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
     <h2>Some options: <code>one.zero</code></h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li><p><code>one.zero = FALSE</code></p>
 
@@ -220,11 +257,15 @@ tract = 950501, one.zero = TRUE)
 </code></pre></li>
 </ul>
 
-  </div>
-</section>
-<section class="slide " id="slide-8">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
     <h2><code>ratio</code> and <code>one.zero</code></h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li><p><code>method = &quot;ratio&quot;</code> and <code>one.zero = FALSE</code></p>
 
@@ -245,11 +286,15 @@ tract = 950501, one.zero = FALSE)
 </code></pre></li>
 </ul>
 
-  </div>
-</section>
-<section class="slide " id="slide-9">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
     <h2><code>ratio</code> and <code>one.zero</code></h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li><p><code>method = &quot;ratio&quot;</code> and <code>one.zero = TRUE</code> </p>
 
@@ -270,11 +315,15 @@ tract = 950501, one.zero = TRUE)
 </code></pre></li>
 </ul>
 
-  </div>
-</section>
-<section class="slide " id="slide-10">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
     <h2><code>agg</code> and <code>one.zero</code></h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li><p><code>method = &quot;agg&quot;</code> and <code>one.zero = FALSE</code> </p>
 
@@ -294,11 +343,15 @@ tract = 950501, one.zero = FALSE)
 </code></pre></li>
 </ul>
 
-  </div>
-</section>
-<section class="slide " id="slide-11">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
     <h2><code>agg</code> and <code>one.zero</code></h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li><p><code>method = &quot;agg&quot;</code> and <code>one.zero = TRUE</code> </p>
 
@@ -318,22 +371,30 @@ tract = 950501, one.zero = TRUE)
 </code></pre></li>
 </ul>
 
-  </div>
-</section>
-<section class="slide " id="slide-12">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
     <h2>To note</h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li><p>When the square root of the standard error formula doesn&#39;t exist (e.g., square root of a negative number), the ratio formula is used  instead.  </p></li>
 <li><p>This adjustment is performed <code>unit by unit</code>, <code>row by row</code>.  </p></li>
 <li><p>There are some cases where the <code>one.zero</code> option makes the square root undefinable. In those cases, the function uses the &quot;ratio&quot; formula to estimate the standard errors. Exists the possibility that the &quot;ratio&quot; estimates are higher than the &quot;proportion&quot; estimates without the <code>one.zero</code> option.  </p></li>
 </ul>
 
-  </div>
-</section>
-<section class="slide " id="slide-13">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
     <h2>Using an Excel file</h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li>After adjusting some minor format issues, save the Excel file as a CSV file</li>
 <li>Read that file using <code>R</code></li>
@@ -352,11 +413,15 @@ str(sheet)
 ##  - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt;
 </code></pre>
 
-  </div>
-</section>
-<section class="slide " id="slide-14">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
     <h2>Using an Excel file</h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li><p>Define all levels in a vector</p>
 
@@ -374,11 +439,15 @@ save(wi_acs, file = &quot;wi_acs.rd&quot;)
 </code></pre></li>
 </ul>
 
-  </div>
-</section>
-<section class="slide " id="slide-15">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
     <h2>Using an Excel file</h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li>Use the corresponding columns and fields to create indicators</li>
 <li>Open the output file in Excel</li>
@@ -398,11 +467,15 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield],
 ## [1] &quot;. . . . . .  Data exported to a CSV file! Done!&quot;
 </code></pre>
 
-  </div>
-</section>
-<section class="slide " id="slide-16">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
     <h2>Conclusions</h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li><p>Strengths</p>
 
@@ -424,32 +497,143 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield],
 </ul></li>
 </ul>
 
-  </div>
-</section>
-  <div class="progress">
-    <div></div>
-  </div>
-	<script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/shower/shower.js"></script>
-	<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
-	<script type="text/x-mathjax-config">
-	  MathJax.Hub.Config({
-	    tex2jax: {
-	      inlineMath: [['$','$'], ['\\(','\\)']],
-	      processEscapes: true
-	    }
-	  });
-	</script>
-	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-	<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script> -->
-	<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Install <code>acsr</code> package in <code>R</code>'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Load <code>acsr</code> and help files'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Why to use the <code>acsdata</code> function?'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Let&#39;s now use the <code>sumacs</code> function'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Some options: <code>format.out</code>'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Some options: <code>file</code>'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Some options: <code>one.zero</code>'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Some options: <code>one.zero</code>'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='<code>ratio</code> and <code>one.zero</code>'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='<code>ratio</code> and <code>one.zero</code>'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='<code>agg</code> and <code>one.zero</code>'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='<code>agg</code> and <code>one.zero</code>'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='To note'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Using an Excel file'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Using an Excel file'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Using an Excel file'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Conclusions'>
+         17
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
 </script>
 <!-- LOAD HIGHLIGHTER JS FILES -->
-	<script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/highlight.pack.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
-	<!-- DONE LOADING HIGHLIGHTER JS FILES -->
-	 
-		<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
-	<!-- Photos by John Carey — fiftyfootshadows.net -->
-</body>
-</html>
+  <script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
