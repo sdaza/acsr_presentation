@@ -61,7 +61,7 @@ devtools::install_github("sdaza/acsr")
 ## Why to use the `acsdata` function?
 
 - To download the data can be slow, specially when there are many geographic/administrative levels
-- A better approach might be to download the data first, and then use them as input with the `sumacs` function 
+- A better approach is to download the data first, and then use them as input
 
 
 
@@ -82,7 +82,7 @@ devtools::install_github("sdaza/acsr")
 
 ---
 
-## Let's now use the `sumacs` function
+## The `sumacs` function
 
 
 ```r

@@ -99,7 +99,7 @@ Level = county
   <article data-timings="">
     <ul>
 <li>To download the data can be slow, specially when there are many geographic/administrative levels</li>
-<li><p>A better approach might be to download the data first, and then use them as input with the <code>sumacs</code> function </p>
+<li><p>A better approach is to download the data first, and then use them as input</p>
 
 <pre><code class="r">d &lt;- acsdata(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;,
  level = &quot;county&quot;)
@@ -119,7 +119,7 @@ Level = county
 
 <slide class="" id="slide-4" style="background:;">
   <hgroup>
-    <h2>Let&#39;s now use the <code>sumacs</code> function</h2>
+    <h2>The <code>sumacs</code> function</h2>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
@@ -525,7 +525,7 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield],
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Let&#39;s now use the <code>sumacs</code> function'>
+        data-slide=4 title='The <code>sumacs</code> function'>
          4
       </a>
     </li>
