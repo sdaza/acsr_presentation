@@ -335,3 +335,29 @@ tract = 950501, one.zero = TRUE)
 - This adjustment is performed unit by unit, row by row.  
 
 - There are some cases where the `one.zero` option makes the square root undefinable. In those cases, the function uses the "ratio" formula to estimate the standard errors. Exists the possibility that the "ratio" estimates are higher than the "proportion" estimates not using the `one.zero` option.  
+
+---
+
+## Using your Excel file
+
+- After adjusting some minor format issues, I save the Excel file as a CSV file
+- I read that file in `R`
+- I used the corresponding variables to create all indicators
+
+  
+  ```r
+    sheet <- fread("/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/moe.csv")
+    dim(sheet)
+  ```
+  
+  ```
+  ## [1] 90  5
+  ```
+  
+  ```r
+    names(sheet)
+  ```
+  
+  ```
+  ## [1] "destination" "myfield"     "type"        "formula"     "moe_varname"
+  ```

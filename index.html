@@ -383,6 +383,34 @@ tract = 950501, one.zero = TRUE)
   <!-- Presenter Notes -->
 </slide>
 
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Using your Excel file</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>After adjusting some minor format issues, I save the Excel file as a CSV file</li>
+<li>I read that file in <code>R</code></li>
+<li><p>I used the corresponding variables to create all indicators</p>
+
+<pre><code class="r">sheet &lt;- fread(&quot;/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/moe.csv&quot;)
+dim(sheet)
+</code></pre>
+
+<pre><code>## [1] 90  5
+</code></pre>
+
+<pre><code class="r">names(sheet)
+</code></pre>
+
+<pre><code>## [1] &quot;destination&quot; &quot;myfield&quot;     &quot;type&quot;        &quot;formula&quot;     &quot;moe_varname&quot;
+</code></pre></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
     <slide class="backdrop"></slide>
   </slides>
   <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
@@ -463,6 +491,12 @@ tract = 950501, one.zero = TRUE)
       <a href="#" target="_self" rel='tooltip' 
         data-slide=13 title='Some details...'>
          13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Using your Excel file'>
+         14
       </a>
     </li>
   </ul>
