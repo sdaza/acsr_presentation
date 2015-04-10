@@ -32,19 +32,19 @@ devtools::install_github("sdaza/acsr")
 ## Load `acsr` and help files
 
 
-Remember to set the API key for the `acs` package.
-You have to do it only once.
+-Remember to set the API key for the `acs` package. You have to do it only once.
 
 ```
 api.key.install(key="*")
 ```
 
-Explore help files of the main functions: 
-```
-library(acsr)
-?acsdata
-?sumacs
-```
+- Explore help files of the main functions: 
+
+    ```
+    library(acsr)
+    ?acsdata
+    ?sumacs
+    ```
 
 ----
 
@@ -64,3 +64,13 @@ library(acsr)
 - This will create a list with ACS objects.
 
 ---
+
+### Let's now use the `sumacs`function
+
+    ```{r }
+    tab <- sumacs("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", "langspan0913", "prop", data = d)
+    ```
+
+    ```{r }
+    tab
+    ```
