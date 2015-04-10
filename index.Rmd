@@ -244,8 +244,7 @@ tab2[, c(1,6, 11:12), with = FALSE]
     path <- "/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/"
   ```
 
-  ```{r, eval = TRUE}
+  ```{r}
     sheet <- fread(paste0(path, "moe.csv"))
-    dim(sheet)
-    sheet[1,]
+    str(sheet)
   ```
