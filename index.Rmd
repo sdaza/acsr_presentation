@@ -9,20 +9,6 @@ hitheme     : solarized_light
 widgets     : []            # {mathjax, quiz, bootstrap}
 ---
 
-.title-slide {
-  background-color: #CBE7A5; /* #EDE0CF; ; #CA9F9D*/
-}
-
-.title-slide hgroup > h1{
- font-family: 'Oswald', 'Helvetica', sanserif; 
-}
-
-.title-slide hgroup > h1, 
-.title-slide hgroup > h2 {
-  color: #535E43 ;  /* ; #EF5150*/
-}
-
-
 ## Install `acsr` package in `R`
 
 First, install some dependencies:  
@@ -68,3 +54,21 @@ Explore help files of the main functions:
 1. To download the data can be slow, specially when there are many geographic levels
 2. Better, to download the data first, then use them as input 
 3. Main arguments of the `acsdata` function
+
+
+---
+
+<style>
+.title-slide {
+  background-color: #CBE7A5; /* #EDE0CF; ; #CA9F9D*/
+}
+
+.title-slide hgroup > h1{
+ font-family: 'Oswald', 'Helvetica', sanserif; 
+}
+
+.title-slide hgroup > h1, 
+.title-slide hgroup > h2 {
+  color: #535E43 ;  /* ; #EF5150*/
+}
+</style>
