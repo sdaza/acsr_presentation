@@ -340,9 +340,8 @@ tract = 950501, one.zero = TRUE)
 
 ## Using your Excel file
 
-- After adjusting some minor format issues, I save the Excel file as a CSV file
-- I read that file in `R`
-- I used the corresponding variables to create all indicators
+- After adjusting some minor format issues, save the Excel file as a CSV file
+- Read that file using `R`
 
 
 
@@ -367,45 +366,37 @@ str(sheet)
 
 ## Using your Excel file
 
-- Define levels as a vector
-- Use the columns for the corresponding fields
-- This can take some time, here I will use data that I already downloaded for all levels and variables
-- You can open the output file in Excel
+- This can take a while, here I downloaded the data first!
 
 ```
+# download the data first
 wi_acs <- acsdata(sheet[, formula], level = levels)
+# save the data
 save(wi_acs, file = "wi_acs.rd") # save data
 ```
 
 
-```r
-load(paste0(path, "wi_acs.rdata")) # load data
-```
 
 --- 
 
 
 ## Using your Excel file
 
+- Define all levels in a vector
+- Use the corresponding columns and fields to create indicators
+- Open the output file in Excel
+
 
 ```r
+# create level vector
 levels <- c("state", "county", "county.subdivision", 
   "tract", "block.group", "congressional.district", 
   "school.district.secondary", "school.district.elementary")
+```
 
-out <- sumacs(sheet[, formula], 
-    sheet[, myfield], 
-    method = sheet[, type], 
+# compute indicators and export the data
+out <- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type], 
     level = levels, one.zero = TRUE, data = wi_acs, file = "output.csv")
-```
-
-```
-## [1] ". . . . . .  ACS variables : 266"
-## [1] ". . . . . .  Levels : 8"
-## [1] ". . . . . .  New variables : 90"
-## [1] ". . . . . .  Creating variables"
-## [1] ". . . . . .  Formatting output"
-## [1] ". . . . . .  Data exported to a CSV file! Done!"
 ```
 
 ---
@@ -414,15 +405,14 @@ out <- sumacs(sheet[, formula],
 
 - Strengths
     - Automatized and tailored way to obtain indicators
-    - Read formulas directly
-    - Different formats for outputs (wide / long)
-    - Easy way to export the data
+    - Reads formulas directly
+    - Different formats for outputs (wide / long), exports the data
     - Easy way to adjust MOEs to different confidence levels
-    - "Ratio" adjustment of standard errors by unit
+    - *Ratio* adjustment of standard errors by unit
     - *zero option* for proportions, ratios and aggregations
+
 - Limitations
     - It depends heavily on the ACS package
-    - Not the fastest function (many loops involved despite some vectorization)
+    - Not the fastest function (loops involved despite some vectorization)
     - It takes less than a minute to create 90 indicators
     - Limited to only 8 levels
-

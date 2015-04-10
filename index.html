@@ -389,9 +389,8 @@ tract = 950501, one.zero = TRUE)
   </hgroup>
   <article data-timings="">
     <ul>
-<li>After adjusting some minor format issues, I save the Excel file as a CSV file</li>
-<li>I read that file in <code>R</code></li>
-<li>I used the corresponding variables to create all indicators</li>
+<li>After adjusting some minor format issues, save the Excel file as a CSV file</li>
+<li>Read that file using <code>R</code></li>
 </ul>
 
 <pre><code class="r">sheet &lt;- fread(paste0(path, &quot;moe.csv&quot;))
@@ -417,17 +416,13 @@ str(sheet)
   </hgroup>
   <article data-timings="">
     <ul>
-<li>Define levels as a vector</li>
-<li>Use the columns for the corresponding fields</li>
-<li>This can take some time, here I will use data that I already downloaded for all levels and variables</li>
-<li>You can open the output file in Excel</li>
+<li>This can take a while, here I downloaded the data first!</li>
 </ul>
 
-<pre><code>wi_acs &lt;- acsdata(sheet[, formula], level = levels)
+<pre><code># download the data first
+wi_acs &lt;- acsdata(sheet[, formula], level = levels)
+# save the data
 save(wi_acs, file = &quot;wi_acs.rd&quot;) # save data
-</code></pre>
-
-<pre><code class="r">load(paste0(path, &quot;wi_acs.rdata&quot;)) # load data
 </code></pre>
 
   </article>
@@ -439,23 +434,24 @@ save(wi_acs, file = &quot;wi_acs.rd&quot;) # save data
     <h2>Using your Excel file</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">levels &lt;- c(&quot;state&quot;, &quot;county&quot;, &quot;county.subdivision&quot;, 
+    <ul>
+<li>Define all levels in a vector</li>
+<li>Use the corresponding columns and fields to create indicators</li>
+<li>Open the output file in Excel</li>
+</ul>
+
+<pre><code class="r"># create level vector
+levels &lt;- c(&quot;state&quot;, &quot;county&quot;, &quot;county.subdivision&quot;, 
   &quot;tract&quot;, &quot;block.group&quot;, &quot;congressional.district&quot;, 
   &quot;school.district.secondary&quot;, &quot;school.district.elementary&quot;)
-
-out &lt;- sumacs(sheet[, formula], 
-    sheet[, myfield], 
-    method = sheet[, type], 
-    level = levels, one.zero = TRUE, data = wi_acs, file = &quot;output.csv&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;. . . . . .  ACS variables : 266&quot;
-## [1] &quot;. . . . . .  Levels : 8&quot;
-## [1] &quot;. . . . . .  New variables : 90&quot;
-## [1] &quot;. . . . . .  Creating variables&quot;
-## [1] &quot;. . . . . .  Formatting output&quot;
-## [1] &quot;. . . . . .  Data exported to a CSV file! Done!&quot;
-</code></pre>
+<h1>compute indicators and export the data</h1>
+
+<p>out &lt;- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type], 
+    level = levels, one.zero = TRUE, data = wi_acs, file = &quot;output.csv&quot;)</p>
+
+<pre><code></code></pre>
 
   </article>
   <!-- Presenter Notes -->
@@ -467,22 +463,21 @@ out &lt;- sumacs(sheet[, formula],
   </hgroup>
   <article data-timings="">
     <ul>
-<li>Strengths
+<li><p>Strengths</p>
 
 <ul>
 <li>Automatized and tailored way to obtain indicators</li>
-<li>Read formulas directly</li>
-<li>Different formats for outputs (wide / long)</li>
-<li>Easy way to export the data</li>
+<li>Reads formulas directly</li>
+<li>Different formats for outputs (wide / long), exports the data</li>
 <li>Easy way to adjust MOEs to different confidence levels</li>
-<li>&quot;Ratio&quot; adjustment of standard errors by unit</li>
+<li><em>Ratio</em> adjustment of standard errors by unit</li>
 <li><em>zero option</em> for proportions, ratios and aggregations</li>
 </ul></li>
-<li>Limitations
+<li><p>Limitations</p>
 
 <ul>
 <li>It depends heavily on the ACS package</li>
-<li>Not the fastest function (many loops involved despite some vectorization)</li>
+<li>Not the fastest function (loops involved despite some vectorization)</li>
 <li>It takes less than a minute to create 90 indicators</li>
 <li>Limited to only 8 levels</li>
 </ul></li>
