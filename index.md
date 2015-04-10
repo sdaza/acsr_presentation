@@ -75,7 +75,8 @@ api.key.install(key="*")
 
     
     ```r
-    tab <- sumacs("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", "langspan0913", "prop", data = d)
+    tab <- sumacs("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
+    "langspan0913", "prop", data = d)
     ```
     
     ```
@@ -86,7 +87,6 @@ api.key.install(key="*")
     ## [1] ". . . . . .  Formatting output"
     ## [1] ". . . . . .  Done!"
     ```
-
     
     ```r
     tab
@@ -242,3 +242,4 @@ api.key.install(key="*")
     ## 72:        NA           NA           NA  0.019142922      0.002800865
     ##     cong_dist sch_dist_sec sch_dist_ele langspan0913 langspan0913_moe
     ```
+
