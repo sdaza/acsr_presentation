@@ -107,7 +107,7 @@ tab[1:3, c(1:4,11:12), with = FALSE]
 
 --- 
 
-## Some options: `format.out`
+## Some options: `format.out` (long?)
 
 
 ```r
@@ -137,7 +137,7 @@ tab[1:3, c(1:4,11:13), with = FALSE]
 
 --- 
 
-## Some options: `file`
+## Some options: `file` (csv)
 
 
 ```r
@@ -156,7 +156,7 @@ varname = "langspan0913", method = "prop", data = d, file = "d.csv")
 
 --- 
 
-## Some options: `one.zero`
+## Some options: `one.zero` (TRUE or FALSE)
 
 
 ```r
@@ -334,7 +334,7 @@ tract = 950501, one.zero = TRUE)
 
 - This adjustment is performed unit by unit, row by row.  
 
-- There are some cases where the `one.zero` option makes the square root undefinable. In those cases, the function uses the "ratio" formula to estimate the standard errors. Exists the possibility that the "ratio" estimates are higher than the "proportion" estimates not using the `one.zero` option.  
+- There are some cases where the `one.zero` option makes the square root undefinable. In those cases, the function uses the "ratio" formula to estimate the standard errors. Exists the possibility that the "ratio" estimates are higher than the "proportion" estimates without the `one.zero` option.  
 
 ---
 

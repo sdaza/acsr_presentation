@@ -150,7 +150,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d)
 
 <slide class="" id="slide-5" style="background:;">
   <hgroup>
-    <h2>Some options: <code>format.out</code></h2>
+    <h2>Some options: <code>format.out</code> (long?)</h2>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
@@ -180,7 +180,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.
 
 <slide class="" id="slide-6" style="background:;">
   <hgroup>
-    <h2>Some options: <code>file</code></h2>
+    <h2>Some options: <code>file</code> (csv)</h2>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
@@ -201,7 +201,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = 
 
 <slide class="" id="slide-7" style="background:;">
   <hgroup>
-    <h2>Some options: <code>one.zero</code></h2>
+    <h2>Some options: <code>one.zero</code> (TRUE or FALSE)</h2>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">tab1 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
@@ -376,7 +376,7 @@ tract = 950501, one.zero = TRUE)
     <ul>
 <li><p>When the square root of the standard error formula doesn&#39;t exist (e.g., square root of a negative number), the ratio formula is used  instead.  </p></li>
 <li><p>This adjustment is performed unit by unit, row by row.  </p></li>
-<li><p>There are some cases where the <code>one.zero</code> option makes the square root undefinable. In those cases, the function uses the &quot;ratio&quot; formula to estimate the standard errors. Exists the possibility that the &quot;ratio&quot; estimates are higher than the &quot;proportion&quot; estimates not using the <code>one.zero</code> option.  </p></li>
+<li><p>There are some cases where the <code>one.zero</code> option makes the square root undefinable. In those cases, the function uses the &quot;ratio&quot; formula to estimate the standard errors. Exists the possibility that the &quot;ratio&quot; estimates are higher than the &quot;proportion&quot; estimates without the <code>one.zero</code> option.  </p></li>
 </ul>
 
   </article>
@@ -517,19 +517,19 @@ levels &lt;- c(&quot;state&quot;, &quot;county&quot;, &quot;county.subdivision&q
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Some options: <code>format.out</code>'>
+        data-slide=5 title='Some options: <code>format.out</code> (long?)'>
          5
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Some options: <code>file</code>'>
+        data-slide=6 title='Some options: <code>file</code> (csv)'>
          6
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Some options: <code>one.zero</code>'>
+        data-slide=7 title='Some options: <code>one.zero</code> (TRUE or FALSE)'>
          7
       </a>
     </li>
