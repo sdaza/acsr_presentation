@@ -45,7 +45,7 @@
     <h2>Install <code>acsr</code> package in <code>R</code></h2>
   </hgroup>
   <article data-timings="">
-    <pre><code># set a server
+    <pre><code class="r"># set a server
 options(repos=structure(c(CRAN=&quot;http://rweb.quant.ku.edu/cran/&quot;)))
 
 # install from CRAN
@@ -75,30 +75,24 @@ devtools::install_github(&quot;sdaza/acsr&quot;)
 </code></pre></li>
 <li><p>Explore help files of the main functions</p>
 
-<pre><code>library(acsr)
+<pre><code class="r">library(acsr)
 ?acsdata
 ?sumacs
 </code></pre></li>
 <li><p>Check defaults!</p>
 
-<ul>
-<li>State = WI</li>
-<li>Year  = 2013</li>
-<li>Span = 5</li>
-<li>Level = county</li>
-</ul></li>
+<pre><code>State = WI
+Year  = 2013
+Span = 5
+Level = county
+</code></pre>
+
+<hr></li>
 </ul>
 
-  </article>
-  <!-- Presenter Notes -->
-</slide>
+<h2>Why to use the <code>acsdata</code> function?</h2>
 
-<slide class="" id="slide-3" style="background:;">
-  <hgroup>
-    <h2>Why to use the <code>acsdata</code> function?</h2>
-  </hgroup>
-  <article data-timings="">
-    <ul>
+<ul>
 <li>To download the data can be slow, specially when there are many geographic/administrative levels</li>
 <li><p>A better approach might be to download the data first, and then use them as input with the <code>sumacs</code> function </p>
 
@@ -118,7 +112,7 @@ devtools::install_github(&quot;sdaza/acsr&quot;)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-4" style="background:;">
+<slide class="" id="slide-3" style="background:;">
   <hgroup>
     <h2>Let&#39;s now use the <code>sumacs</code> function</h2>
   </hgroup>
@@ -148,7 +142,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-5" style="background:;">
+<slide class="" id="slide-4" style="background:;">
   <hgroup>
     <h2>Some options: <code>format.out</code></h2>
   </hgroup>
@@ -178,7 +172,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-6" style="background:;">
+<slide class="" id="slide-5" style="background:;">
   <hgroup>
     <h2>Some options: <code>file</code></h2>
   </hgroup>
@@ -203,7 +197,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = 
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-7" style="background:;">
+<slide class="" id="slide-6" style="background:;">
   <hgroup>
     <h2>Some options: <code>one.zero</code></h2>
   </hgroup>
@@ -234,7 +228,7 @@ tract = 950501, one.zero = TRUE)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-8" style="background:;">
+<slide class="" id="slide-7" style="background:;">
   <hgroup>
     <h2>Some options: <code>one.zero</code></h2>
   </hgroup>
@@ -262,7 +256,7 @@ tract = 950501, one.zero = TRUE)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-9" style="background:;">
+<slide class="" id="slide-8" style="background:;">
   <hgroup>
     <h2><code>ratio</code> and <code>one.zero</code></h2>
   </hgroup>
@@ -291,7 +285,7 @@ tract = 950501, one.zero = FALSE)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-10" style="background:;">
+<slide class="" id="slide-9" style="background:;">
   <hgroup>
     <h2><code>ratio</code> and <code>one.zero</code></h2>
   </hgroup>
@@ -320,7 +314,7 @@ tract = 950501, one.zero = TRUE)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-11" style="background:;">
+<slide class="" id="slide-10" style="background:;">
   <hgroup>
     <h2><code>agg</code> and <code>one.zero</code></h2>
   </hgroup>
@@ -348,7 +342,7 @@ tract = 950501, one.zero = FALSE)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-12" style="background:;">
+<slide class="" id="slide-11" style="background:;">
   <hgroup>
     <h2><code>agg</code> and <code>one.zero</code></h2>
   </hgroup>
@@ -376,7 +370,7 @@ tract = 950501, one.zero = TRUE)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-13" style="background:;">
+<slide class="" id="slide-12" style="background:;">
   <hgroup>
     <h2>To note</h2>
   </hgroup>
@@ -391,7 +385,7 @@ tract = 950501, one.zero = TRUE)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-14" style="background:;">
+<slide class="" id="slide-13" style="background:;">
   <hgroup>
     <h2>Using an Excel file</h2>
   </hgroup>
@@ -418,7 +412,7 @@ str(sheet)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-15" style="background:;">
+<slide class="" id="slide-14" style="background:;">
   <hgroup>
     <h2>Using an Excel file</h2>
   </hgroup>
@@ -427,10 +421,10 @@ str(sheet)
 <li>This can take a while, here I downloaded the data first!</li>
 </ul>
 
-<pre><code># download the data first
+<pre><code class="r"># download the data first
 wi_acs &lt;- acsdata(sheet[, formula], level = levels)
 # save the data
-save(wi_acs, file = &quot;wi_acs.rd&quot;) # save data
+save(wi_acs, file = &quot;wi_acs.rd&quot;)
 </code></pre>
 
 <ul>
@@ -447,7 +441,7 @@ levels &lt;- c(&quot;state&quot;, &quot;county&quot;, &quot;county.subdivision&q
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-16" style="background:;">
+<slide class="" id="slide-15" style="background:;">
   <hgroup>
     <h2>Using an Excel file</h2>
   </hgroup>
@@ -474,7 +468,7 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield], method 
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-17" style="background:;">
+<slide class="" id="slide-16" style="background:;">
   <hgroup>
     <h2>Conclusions</h2>
   </hgroup>
@@ -522,25 +516,25 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield], method 
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Why to use the <code>acsdata</code> function?'>
+        data-slide=3 title='Let&#39;s now use the <code>sumacs</code> function'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Let&#39;s now use the <code>sumacs</code> function'>
+        data-slide=4 title='Some options: <code>format.out</code>'>
          4
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Some options: <code>format.out</code>'>
+        data-slide=5 title='Some options: <code>file</code>'>
          5
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Some options: <code>file</code>'>
+        data-slide=6 title='Some options: <code>one.zero</code>'>
          6
       </a>
     </li>
@@ -552,7 +546,7 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield], method 
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Some options: <code>one.zero</code>'>
+        data-slide=8 title='<code>ratio</code> and <code>one.zero</code>'>
          8
       </a>
     </li>
@@ -564,7 +558,7 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield], method 
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='<code>ratio</code> and <code>one.zero</code>'>
+        data-slide=10 title='<code>agg</code> and <code>one.zero</code>'>
          10
       </a>
     </li>
@@ -576,13 +570,13 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield], method 
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='<code>agg</code> and <code>one.zero</code>'>
+        data-slide=12 title='To note'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='To note'>
+        data-slide=13 title='Using an Excel file'>
          13
       </a>
     </li>
@@ -600,14 +594,8 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield], method 
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='Using an Excel file'>
+        data-slide=16 title='Conclusions'>
          16
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='Conclusions'>
-         17
       </a>
     </li>
   </ul>

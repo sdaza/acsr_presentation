@@ -12,7 +12,8 @@ widgets     : [mathjax]  # {mathjax, quiz, bootstrap}
 ## Install `acsr` package in `R`
 
 
-```
+
+```r
 # set a server
 options(repos=structure(c(CRAN="http://rweb.quant.ku.edu/cran/")))
 
@@ -40,18 +41,20 @@ devtools::install_github("sdaza/acsr")
 
 - Explore help files of the main functions
 
-    ```
+    
+    ```r
     library(acsr)
     ?acsdata
     ?sumacs
     ```
 - Check defaults!
  
-      - State = WI
-      - Year  = 2013
-      - Span = 5
-      - Level = county
-
+    ```
+    State = WI
+    Year  = 2013
+    Span = 5
+    Level = county
+    ```
 ---
 
 ## Why to use the `acsdata` function?
@@ -373,11 +376,12 @@ str(sheet)
 
 - This can take a while, here I downloaded the data first!
 
-```
+
+```r
 # download the data first
 wi_acs <- acsdata(sheet[, formula], level = levels)
 # save the data
-save(wi_acs, file = "wi_acs.rd") # save data
+save(wi_acs, file = "wi_acs.rd")
 ```
 
 - Define all levels in a vector
