@@ -224,7 +224,7 @@ tab2[, c(1,6, 11:12), with = FALSE]
 
 ---
 
-## Some details...
+## Details...
 
 - When the square root of the standard error formula doesn't exist (e.g., square root of a negative number), the ratio formula is used  instead.  
 
@@ -240,8 +240,12 @@ tab2[, c(1,6, 11:12), with = FALSE]
 - I read that file in `R`
 - I used the corresponding variables to create all indicators
 
+  ```{r, echo = FALSE}
+    path <- "/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/"
+  ```
+
   ```{r, eval = TRUE}
-    sheet <- fread("/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/moe.csv")
+    sheet <- fread(paste0(path, "moe.csv"))
     dim(sheet)
-    names(sheet)
+    sheet[1,]
   ```

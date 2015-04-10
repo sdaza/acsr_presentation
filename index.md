@@ -328,7 +328,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## Some details...
+## Details...
 
 - When the square root of the standard error formula doesn't exist (e.g., square root of a negative number), the ratio formula is used  instead.  
 
@@ -344,9 +344,11 @@ tract = 950501, one.zero = TRUE)
 - I read that file in `R`
 - I used the corresponding variables to create all indicators
 
+
+
   
   ```r
-    sheet <- fread("/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/moe.csv")
+    sheet <- fread(paste0(path, "moe.csv"))
     dim(sheet)
   ```
   
@@ -355,9 +357,12 @@ tract = 950501, one.zero = TRUE)
   ```
   
   ```r
-    names(sheet)
+    sheet[1,]
   ```
   
   ```
-  ## [1] "destination" "myfield"     "type"        "formula"     "moe_varname"
+  ##    destination   myfield type                                      formula
+  ## 1:    Food_Sec drive0913 Prop (b08101_009 + b08101_017) / b08101_001 * 100
+  ##      moe_varname
+  ## 1: drive0913_moe
   ```
