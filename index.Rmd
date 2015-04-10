@@ -236,11 +236,12 @@ tab2[, c(1,6, 11:12), with = FALSE]
 
 ## Using your Excel file
 
+- After adjusting some minor format issues, I save the Excel file as a CSV file
+- I read that file in `R`
+- I used the corresponding variables to create all indicators
+
+
   ```{r, echo = FALSE}
     path <- "/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/"
   ```
 
-  ```{r, eval = TRUE}
-    sheet <- fread(paste0(path, "moe.csv"))
-    str(sheet)
-  ```
