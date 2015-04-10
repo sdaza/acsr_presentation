@@ -147,7 +147,7 @@ tab2[, c(1,6, 11:12), with = FALSE]
 
 ---
 
-## `ratio` and `one.zero` 
+## `ratio` and `one.zero` I
 
 - `method = "ratio"` and `one.zero = FALSE`
 
@@ -168,7 +168,7 @@ tab2[, c(1,6, 11:12), with = FALSE]
 
 ---
 
-## `ratio` and `one.zero` 
+## `ratio` and `one.zero` II
 
 - `method = "ratio"` and `one.zero = TRUE` 
 
@@ -189,7 +189,7 @@ tab2[, c(1,6, 11:12), with = FALSE]
 
 ---
 
-##  `agg` and `one.zero` 
+##  `agg` and `one.zero` I
 
 - `method = "agg"` and `one.zero = FALSE` 
 
@@ -209,7 +209,7 @@ tab2[, c(1,6, 11:12), with = FALSE]
 
 ---
 
-## `agg` and `one.zero` 
+## `agg` and `one.zero` II
 
 - `method = "agg"` and `one.zero = TRUE` 
 

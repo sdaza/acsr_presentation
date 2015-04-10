@@ -222,7 +222,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## `ratio` and `one.zero` 
+## `ratio` and `one.zero` I
 
 - `method = "ratio"` and `one.zero = FALSE`
 
@@ -251,7 +251,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## `ratio` and `one.zero` 
+## `ratio` and `one.zero` II
 
 - `method = "ratio"` and `one.zero = TRUE` 
 
@@ -280,7 +280,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-##  `agg` and `one.zero` 
+##  `agg` and `one.zero` I
 
 - `method = "agg"` and `one.zero = FALSE` 
 
@@ -308,7 +308,7 @@ tract = 950501, one.zero = TRUE)
 
 ---
 
-## `agg` and `one.zero` 
+## `agg` and `one.zero` II
 
 - `method = "agg"` and `one.zero = TRUE` 
 
