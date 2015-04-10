@@ -54,7 +54,6 @@ Explore help files of the main functions:
 
 1. To download the data can be slow, specially when there are many geographic/administrative levels
 2. A better approach might be to download the data first, and then use them as input with the `sumacs` function 
-3. Main arguments of the `acsdata` function are...
 
 ```
 acsdata(formula, level = "county", endyear = 2013, span = 5,
@@ -62,3 +61,7 @@ acsdata(formula, level = "county", endyear = 2013, span = 5,
   block_group = "*", congressional_district = "*",
   school_district_secondary = "*", school_district_elementary = "*")
 ```
+
+```r
+library(acsr)
+acsdata("(b16004_004 + b16004_026 + b16004_048 / b16004_001)", level = "county") ```
