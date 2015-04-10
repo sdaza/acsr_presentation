@@ -463,10 +463,30 @@ out &lt;- sumacs(sheet[, formula],
 
 <slide class="" id="slide-17" style="background:;">
   <hgroup>
-    <h2>Conclusion</h2>
+    <h2>Conclusions</h2>
   </hgroup>
   <article data-timings="">
-    <p>Test</p>
+    <ul>
+<li>Strengths
+
+<ul>
+<li>Automatized and tailored way to obtain indicators</li>
+<li>Read formulas directly</li>
+<li>Different formats for outputs (wide / long)</li>
+<li>Easy way to export the data</li>
+<li>Easy way to adjust MOEs to different confidence levels</li>
+<li>&quot;Ratio&quot; adjustment of standard errors by unit</li>
+<li><em>zero option</em> for proportions, ratios and aggregations</li>
+</ul></li>
+<li>Limitations
+
+<ul>
+<li>It depends heavily on the ACS package</li>
+<li>Not the fastest function (many loops involved despite some vectorization)</li>
+<li>It takes less than a minute to create 90 indicators</li>
+<li>Limited to only 8 levels</li>
+</ul></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -574,7 +594,7 @@ out &lt;- sumacs(sheet[, formula],
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='Conclusion'>
+        data-slide=17 title='Conclusions'>
          17
       </a>
     </li>

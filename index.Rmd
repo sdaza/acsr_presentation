@@ -286,7 +286,19 @@ out <- sumacs(sheet[, formula],
 
 ---
 
-## Conclusion
+## Conclusions
 
-Test
+- Strengths
+    - Automatized and tailored way to obtain indicators
+    - Read formulas directly
+    - Different formats for outputs (wide / long)
+    - Easy way to export the data
+    - Easy way to adjust MOEs to different confidence levels
+    - "Ratio" adjustment of standard errors by unit
+    - *zero option* for proportions, ratios and aggregations
+- Limitations
+    - It depends heavily on the ACS package
+    - Not the fastest function (many loops involved despite some vectorization)
+    - It takes less than a minute to create 90 indicators
+    - Limited to only 8 levels
 
