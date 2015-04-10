@@ -174,7 +174,7 @@ tab2[, c(1,6, 11:12), with = FALSE]
     ```
 
     ```{r, echo = FALSE}
-      tab3[, c(1,6, 11:12), with = FALSE]
+    tab3[, c(1,6, 11:12), with = FALSE]
     ```
 
     ```{r, eval = TRUE}
@@ -215,7 +215,7 @@ tab2[, c(1,6, 11:12), with = FALSE]
     ```
 
     ```{r, echo = FALSE}
-      tab4[, c(1,6, 11:12), with = FALSE]
+    tab4[, c(1,6, 11:12), with = FALSE]
     ```
 
     ```{r, eval = TRUE}
