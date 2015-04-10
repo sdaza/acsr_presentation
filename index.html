@@ -94,7 +94,8 @@ devtools::install_github(&quot;sdaza/acsr&quot;)
 <li>To download the data can be slow, specially when there are many geographic/administrative levels</li>
 <li><p>A better approach might be to download the data first, and then use them as input with the <code>sumacs</code> function </p>
 
-<pre><code class="r">d &lt;- acsdata(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, level = &quot;county&quot;)
+<pre><code class="r">d &lt;- acsdata(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;,
+ level = &quot;county&quot;)
 </code></pre>
 
 <pre><code>## [1] &quot;. . . . . .  ACS variables : 4&quot;
@@ -111,7 +112,7 @@ devtools::install_github(&quot;sdaza/acsr&quot;)
 
 <slide class="" id="slide-4" style="background:;">
   <hgroup>
-    <h2>Let&#39;s now use the <code>sumacs</code>function</h2>
+    <h2>Let&#39;s now use the <code>sumacs</code> function</h2>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
@@ -133,6 +134,66 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d)
 ## 1: 55001      050      55       001   0.02725587      0.003377554
 ## 2: 55003      050      55       003   0.01152700      0.003850785
 ## 3: 55005      050      55       005   0.02040295      0.003084028
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Some options: format.out (wide or long)</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
+varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.out = &quot;long&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;. . . . . .  ACS variables : 4&quot;
+## [1] &quot;. . . . . .  Levels : 1&quot;
+## [1] &quot;. . . . . .  New variables : 1&quot;
+## [1] &quot;. . . . . .  Creating variables&quot;
+## [1] &quot;. . . . . .  Formatting output&quot;
+## [1] &quot;. . . . . .  Done!&quot;
+</code></pre>
+
+<pre><code class="r">tab[1:3, c(1:4,12:13), with = FALSE]
+</code></pre>
+
+<pre><code>##    stfid sumlevel st_fips cnty_fips        est         moe
+## 1: 55001      050      55       001 0.02725587 0.003377554
+## 2: 55003      050      55       003 0.01152700 0.003850785
+## 3: 55005      050      55       005 0.02040295 0.003084028
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Some options: format.out (wide or long)</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
+varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.out = &quot;long&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;. . . . . .  ACS variables : 4&quot;
+## [1] &quot;. . . . . .  Levels : 1&quot;
+## [1] &quot;. . . . . .  New variables : 1&quot;
+## [1] &quot;. . . . . .  Creating variables&quot;
+## [1] &quot;. . . . . .  Formatting output&quot;
+## [1] &quot;. . . . . .  Done!&quot;
+</code></pre>
+
+<pre><code class="r">tab[1:3, c(1:4,12:13), with = FALSE]
+</code></pre>
+
+<pre><code>##    stfid sumlevel st_fips cnty_fips        est         moe
+## 1: 55001      050      55       001 0.02725587 0.003377554
+## 2: 55003      050      55       003 0.01152700 0.003850785
+## 3: 55005      050      55       005 0.02040295 0.003084028
 </code></pre>
 
   </article>
@@ -163,8 +224,20 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Let&#39;s now use the <code>sumacs</code>function'>
+        data-slide=4 title='Let&#39;s now use the <code>sumacs</code> function'>
          4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Some options: format.out (wide or long)'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Some options: format.out (wide or long)'>
+         6
       </a>
     </li>
   </ul>

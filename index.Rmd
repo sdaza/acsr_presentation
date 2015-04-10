@@ -58,18 +58,39 @@ devtools::install_github("sdaza/acsr")
     ```
 
     ```{r }
-    d <- acsdata(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", level = "county")
+    d <- acsdata(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)",
+     level = "county")
     ```
 
 - This will create a list with ACS objects.
 
 ---
 
-## Let's now use the `sumacs`function
+## Let's now use the `sumacs` function
 
 ```{r }
 tab <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
 varname = "langspan0913", method = "prop", data = d)
 tab[1:3, c(1:4,11:12), with = FALSE]
+```
+
+--- 
+
+## Some options: format.out (wide or long)
+
+```{r }
+tab <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
+varname = "langspan0913", method = "prop", data = d, format.out = "long")
+tab[1:3, c(1:4,12:13), with = FALSE]
+```
+
+--- 
+
+## Some options: format.out (wide or long)
+
+```{r }
+tab <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
+varname = "langspan0913", method = "prop", data = d, format.out = "long")
+tab[1:3, c(1:4,12:13), with = FALSE]
 ```
 
