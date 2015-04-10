@@ -250,3 +250,33 @@ sheet <- fread(paste0(path, "moe.csv"))
 str(sheet)
 ```
 
+--- 
+
+## Using your Excel file
+
+- Define levels as a vector
+- Use the columns for the corresponding fields
+- This can take some time, here I will use data that I already downloaded for all levels and variables
+- You can open the output file in Excel
+
+```
+wi_acs <- acsdata(sheet[, formula], level = levels)
+save(wi_acs, file = "wi_acs.rd") # save data
+```
+
+```{r}
+load(paste0(path, "wi_acs.rd")) # load data
+
+levels <- c("state", "county", "county.subdivision", "tract", 
+  "block.group", "congressional.district", 
+  "school.district.secondary", "school.district.elementary")
+
+out <- sumacs(sheet[1, formula], 
+    sheet[1, myfield], 
+    method = sheet[1, type], 
+    level = levels, one.zero = TRUE, data = wi_acs, file = "output.csv")
+```
+
+--- 
+
+## Conclusion

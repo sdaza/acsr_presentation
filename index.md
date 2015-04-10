@@ -363,3 +363,55 @@ str(sheet)
 ##  - attr(*, ".internal.selfref")=<externalptr>
 ```
 
+--- 
+
+## Using your Excel file
+
+- Define levels as a vector
+- Use the columns for the corresponding fields
+- This can take some time, here I will use data that I already downloaded for all levels and variables
+- You can open the output file in Excel
+
+```
+wi_acs <- acsdata(sheet[, formula], level = levels)
+save(wi_acs, file = "wi_acs.rd") # save data
+```
+
+
+```r
+load(paste0(path, "wi_acs.rd")) # load data
+```
+
+```
+## Warning in readChar(con, 5L, useBytes = TRUE): cannot open compressed file
+## '/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/wi_acs.rd',
+## probable reason 'No such file or directory'
+```
+
+```
+## Error in readChar(con, 5L, useBytes = TRUE): cannot open the connection
+```
+
+```r
+levels <- c("state", "county", "county.subdivision", "tract", 
+  "block.group", "congressional.district", 
+  "school.district.secondary", "school.district.elementary")
+
+out <- sumacs(sheet[1, formula], 
+    sheet[1, myfield], 
+    method = sheet[1, type], 
+    level = levels, one.zero = TRUE, data = wi_acs, file = "output.csv")
+```
+
+```
+## [1] ". . . . . .  ACS variables : 3"
+## [1] ". . . . . .  Levels : 8"
+## [1] ". . . . . .  New variables : 1"
+## [1] ". . . . . .  Creating variables"
+## [1] ". . . . . .  Formatting output"
+## [1] ". . . . . .  Data exported to a CSV file! Done!"
+```
+
+--- 
+
+## Conclusion
