@@ -31,13 +31,13 @@ devtools::install_github("sdaza/acsr")
 
 ## Load `acsr` and help files
 
-- Remember to set the API key for the `acs` package. You have to do it only once.
+- Remember to set the API key for the `acs` package. You have to do it only once
 
     ```
     api.key.install(key="")
     ```
 
-- Explore help files of the main functions: 
+- Explore help files of the main functions
 
     ```
     library(acsr)
@@ -56,7 +56,7 @@ devtools::install_github("sdaza/acsr")
 ## Why to use the `acsdata` function?
 
 - To download the data can be slow, specially when there are many geographic/administrative levels
--  A better approach might be to download the data first, and then use them as input with the `sumacs` function 
+- A better approach might be to download the data first, and then use them as input with the `sumacs` function 
 
 
 
@@ -73,7 +73,7 @@ devtools::install_github("sdaza/acsr")
     ## [1] ". . . . . .  Done!"
     ```
 
-- This will create a list with ACS objects.
+- This will create a list with ACS objects
 
 ---
 
@@ -406,9 +406,9 @@ out <- sumacs(sheet[, formula], sheet[, myfield], method = sheet[, type],
 - Strengths
     - Automatized and tailored way to obtain indicators
     - Reads formulas directly
-    - Different formats for outputs (wide / long), exports the data
+    - Different formats for outputs (wide and long), exports the data
     - Easy way to adjust MOEs to different confidence levels
-    - *Ratio* adjustment of standard errors by unit
+    - *Ratio* adjustment of standard errors per unit
     - *zero option* for proportions, ratios and aggregations
 
 - Limitations
