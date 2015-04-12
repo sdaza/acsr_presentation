@@ -204,17 +204,10 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = 
 
 <slide class="" id="slide-7" style="background:;">
   <hgroup>
-    <h2>Some options: <code>one.zero</code></h2>
+    <h2>Some options: standard errors and <code>one.zero</code></h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li><p>Different ways to compute standard errors</p>
-
-<ul>
-<li><code>one.zero = FALSE</code></li>
-</ul>
-
-<pre><code class="r">tab1 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
+    <pre><code class="r">tab1 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, level = &quot;tract&quot;, county = 1, 
 tract = 950501, one.zero = FALSE)
 </code></pre>
@@ -223,10 +216,6 @@ tract = 950501, one.zero = FALSE)
 ## 1: 55001950501     950501   0.02263907       0.02518933
 </code></pre>
 
-<ul>
-<li><code>one.zero = TRUE</code></li>
-</ul>
-
 <pre><code class="r">tab2 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, level = &quot;tract&quot;, county = 1, 
 tract = 950501, one.zero = TRUE)
@@ -234,8 +223,7 @@ tract = 950501, one.zero = TRUE)
 
 <pre><code>##          stfid tract_fips langspan0913 langspan0913_moe
 ## 1: 55001950501     950501   0.02263907        0.0245074
-</code></pre></li>
-</ul>
+</code></pre>
 
   </article>
   <!-- Presenter Notes -->
@@ -552,7 +540,7 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield],
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Some options: <code>one.zero</code>'>
+        data-slide=7 title='Some options: standard errors and <code>one.zero</code>'>
          7
       </a>
     </li>
