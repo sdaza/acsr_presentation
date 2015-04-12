@@ -16,14 +16,14 @@ widgets     : [mathjax]  # {mathjax, quiz, bootstrap}
 # set a server
 options(repos=structure(c(CRAN="http://rweb.quant.ku.edu/cran/")))
 
-# install from CRAN
+# install devtoos and acs from CRAN
 install.packages("devtools")
 install.packages("acs")
 
-# install from github
+# install data.table from github
 devtools::install_github("Rdatatable/data.table", build_vignettes = FALSE)
 
-# install acsr package
+# install acsr from github
 devtools::install_github("sdaza/acsr")
 ```
 
@@ -148,7 +148,7 @@ tab[1:3, c(1:4,11:13), with = FALSE]
     
     ```r
     tab <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
-    varname = "langspan0913", method = "prop", data = d, file = "d.csv")
+    varname = "langspan0913", method = "prop", data = d, file = "out.csv")
     ```
     
     ```
@@ -164,7 +164,9 @@ tab[1:3, c(1:4,11:13), with = FALSE]
 
 ## Some options: `one.zero`
 
-- Different ways to estimate standard errors
+- Different ways to compute standard errors
+
+    - `one.zero = FALSE`
 
     
     ```r
@@ -179,6 +181,8 @@ tab[1:3, c(1:4,11:13), with = FALSE]
     ## 1: 55001950501     950501   0.02263907       0.02518933
     ```
 
+    - `one.zero = TRUE`
+        
     
     ```r
     tab2 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
@@ -342,7 +346,7 @@ tab[1:3, c(1:4,11:13), with = FALSE]
 
 - The ratio adjustment is done `case by case`.  
 
-- There are some cases where the `one.zero` option makes the square root undefinable. In those cases, the function uses the "ratio" formula to estimate standard errors. 
+- There are some cases where the `one.zero` option makes the square root undefinable. In those cases, the function uses the "ratio" formula to compute standard errors. 
 
 - There is a possibility that the "ratio" estimates are higher than the "proportion" estimates without the `one.zero` option.  
 
@@ -350,7 +354,7 @@ tab[1:3, c(1:4,11:13), with = FALSE]
 
 ## Using an Excel file
 
-- After some minor format issues are adjusted, save the Excel file as a CSV file
+- Save the Excel file as a CSV file after adjusting the format (e.g., no empty rows, name of variables)
 - Read that file using `R`
 
 
@@ -385,7 +389,7 @@ tab[1:3, c(1:4,11:13), with = FALSE]
     "school.district.secondary", "school.district.elementary")
     ```
 
-- This can take a while, here I downloaded the data first!
+- This can take a while! Here I downloaded the data first and then I saved them
 
     
     ```r
@@ -432,7 +436,7 @@ tab[1:3, c(1:4,11:13), with = FALSE]
     - Reads formulas directly
     - Different formats for outputs (wide and long), exports the data
     - Easy way to adjust MOEs to different confidence levels
-    - Ratio adjustment of standard errors per unit
+    - Ratio adjustment of standard errors case by case
     - Zero-option for proportions, ratios and aggregations
 
 - `Limitations`

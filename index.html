@@ -48,14 +48,14 @@
     <pre><code class="r"># set a server
 options(repos=structure(c(CRAN=&quot;http://rweb.quant.ku.edu/cran/&quot;)))
 
-# install from CRAN
+# install devtoos and acs from CRAN
 install.packages(&quot;devtools&quot;)
 install.packages(&quot;acs&quot;)
 
-# install from github
+# install data.table from github
 devtools::install_github(&quot;Rdatatable/data.table&quot;, build_vignettes = FALSE)
 
-# install acsr package
+# install acsr from github
 devtools::install_github(&quot;sdaza/acsr&quot;)
 </code></pre>
 
@@ -186,7 +186,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.
 <li><p>Define a CSV file to export the output</p>
 
 <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
-varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = &quot;d.csv&quot;)
+varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = &quot;out.csv&quot;)
 </code></pre>
 
 <pre><code>## [1] &quot;. . . . . .  ACS variables : 4&quot;
@@ -208,7 +208,11 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = 
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>Different ways to estimate standard errors</p>
+<li><p>Different ways to compute standard errors</p>
+
+<ul>
+<li><code>one.zero = FALSE</code></li>
+</ul>
 
 <pre><code class="r">tab1 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, level = &quot;tract&quot;, county = 1, 
@@ -218,6 +222,10 @@ tract = 950501, one.zero = FALSE)
 <pre><code>##          stfid tract_fips langspan0913 langspan0913_moe
 ## 1: 55001950501     950501   0.02263907       0.02518933
 </code></pre>
+
+<ul>
+<li><code>one.zero = TRUE</code></li>
+</ul>
 
 <pre><code class="r">tab2 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, level = &quot;tract&quot;, county = 1, 
@@ -383,7 +391,7 @@ tract = 950501, one.zero = TRUE)
     <ul>
 <li><p>When the square root of the standard error formula doesn&#39;t exist (e.g., the square root of a negative number), the ratio formula is used  instead.  </p></li>
 <li><p>The ratio adjustment is done <code>case by case</code>.  </p></li>
-<li><p>There are some cases where the <code>one.zero</code> option makes the square root undefinable. In those cases, the function uses the &quot;ratio&quot; formula to estimate standard errors. </p></li>
+<li><p>There are some cases where the <code>one.zero</code> option makes the square root undefinable. In those cases, the function uses the &quot;ratio&quot; formula to compute standard errors. </p></li>
 <li><p>There is a possibility that the &quot;ratio&quot; estimates are higher than the &quot;proportion&quot; estimates without the <code>one.zero</code> option.  </p></li>
 </ul>
 
@@ -397,7 +405,7 @@ tract = 950501, one.zero = TRUE)
   </hgroup>
   <article data-timings="">
     <ul>
-<li>After some minor format issues are adjusted, save the Excel file as a CSV file</li>
+<li>Save the Excel file as a CSV file after adjusting the format (e.g., no empty rows, name of variables)</li>
 <li><p>Read that file using <code>R</code></p>
 
 <pre><code class="r">sheet &lt;- fread(paste0(path, &quot;moe.csv&quot;))
@@ -431,7 +439,7 @@ levels &lt;- c(&quot;state&quot;, &quot;county&quot;, &quot;county.subdivision&q
 &quot;tract&quot;, &quot;block.group&quot;, &quot;congressional.district&quot;, 
 &quot;school.district.secondary&quot;, &quot;school.district.elementary&quot;)
 </code></pre></li>
-<li><p>This can take a while, here I downloaded the data first!</p>
+<li><p>This can take a while! Here I downloaded the data first and then I saved them</p>
 
 <pre><code class="r"># download the data first
 wi_acs &lt;- acsdata(sheet[, formula], level = levels)
@@ -485,7 +493,7 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield],
 <li>Reads formulas directly</li>
 <li>Different formats for outputs (wide and long), exports the data</li>
 <li>Easy way to adjust MOEs to different confidence levels</li>
-<li>Ratio adjustment of standard errors per unit</li>
+<li>Ratio adjustment of standard errors case by case</li>
 <li>Zero-option for proportions, ratios and aggregations</li>
 </ul></li>
 <li><p><code>Limitations</code></p>
