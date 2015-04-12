@@ -401,7 +401,7 @@ tract = 950501, one.zero = TRUE)
 ## Using an Excel file
 
 
-- Define the function fields as vectors
+- Define the function fields
 - Open the output file in Excel
 
     

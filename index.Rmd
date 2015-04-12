@@ -285,7 +285,7 @@ tab2[, c(1,6, 11:12), with = FALSE]
 ## Using an Excel file
 
 
-- Define the function fields as vectors
+- Define the function fields
 - Open the output file in Excel
 
     ```{r}
