@@ -49,17 +49,17 @@ devtools::install_github("sdaza/acsr")
 
 - Check defaults!
     ```
-    State = WI
-    Year  = 2013
-    Span = 5
-    Level = county
+    state = WI
+    year  = 2013
+    span = 5
+    level = county
     ```
 
 ---
 
 ## Why to use the `acsdata` function?
 
-- To download the data can be slow, specially when there are many geographic/administrative levels
+- To download the data can be slow, especially when there are many geographic/administrative levels
 - A better approach is to download the data first, and then use them as input
 
 
@@ -77,7 +77,7 @@ devtools::install_github("sdaza/acsr")
     ## [1] ". . . . . .  Done!"
     ```
 
-- This will create a list with ACS objects
+- This will create a list of ACS objects
 
 ---
 
@@ -145,20 +145,20 @@ tab[1:3, c(1:4,11:13), with = FALSE]
 
 - Define a CSV file to export the output
 
-
-```r
-tab <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
-varname = "langspan0913", method = "prop", data = d, file = "d.csv")
-```
-
-```
-## [1] ". . . . . .  ACS variables : 4"
-## [1] ". . . . . .  Levels : 1"
-## [1] ". . . . . .  New variables : 1"
-## [1] ". . . . . .  Creating variables"
-## [1] ". . . . . .  Formatting output"
-## [1] ". . . . . .  Data exported to a CSV file! Done!"
-```
+    
+    ```r
+    tab <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048 / b16004_001)", 
+    varname = "langspan0913", method = "prop", data = d, file = "d.csv")
+    ```
+    
+    ```
+    ## [1] ". . . . . .  ACS variables : 4"
+    ## [1] ". . . . . .  Levels : 1"
+    ## [1] ". . . . . .  New variables : 1"
+    ## [1] ". . . . . .  Creating variables"
+    ## [1] ". . . . . .  Formatting output"
+    ## [1] ". . . . . .  Data exported to a CSV file! Done!"
+    ```
 
 --- 
 
@@ -166,31 +166,31 @@ varname = "langspan0913", method = "prop", data = d, file = "d.csv")
 
 - Different ways to estimate standard errors
 
+    
+    ```r
+    tab1 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
+    varname = "langspan0913", method = "prop", level = "tract", county = 1, 
+    tract = 950501, one.zero = FALSE)
+    ```
 
-```r
-tab1 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
-varname = "langspan0913", method = "prop", level = "tract", county = 1, 
-tract = 950501, one.zero = FALSE)
-```
+    
+    ```
+    ##          stfid tract_fips langspan0913 langspan0913_moe
+    ## 1: 55001950501     950501   0.02263907       0.02518933
+    ```
 
+    
+    ```r
+    tab2 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
+    varname = "langspan0913", method = "prop", level = "tract", county = 1, 
+    tract = 950501, one.zero = TRUE)
+    ```
 
-```
-##          stfid tract_fips langspan0913 langspan0913_moe
-## 1: 55001950501     950501   0.02263907       0.02518933
-```
-
-
-```r
-tab2 <- sumacs(formula = "(b16004_004 + b16004_026 + b16004_048) / b16004_001", 
-varname = "langspan0913", method = "prop", level = "tract", county = 1, 
-tract = 950501, one.zero = TRUE)
-```
-
-
-```
-##          stfid tract_fips langspan0913 langspan0913_moe
-## 1: 55001950501     950501   0.02263907        0.0245074
-```
+    
+    ```
+    ##          stfid tract_fips langspan0913 langspan0913_moe
+    ## 1: 55001950501     950501   0.02263907        0.0245074
+    ```
 
 ---
 
@@ -213,7 +213,7 @@ tract = 950501, one.zero = TRUE)
     
     ```r
     ( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2) - 
-    ( 0.0226390685640362 ^2 * 102.1277 ^ 2 )) / 1546 ) * 1.645 
+    ( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546 ) * 1.645 
     ```
     
     ```
@@ -299,7 +299,7 @@ tract = 950501, one.zero = TRUE)
 
     
     ```r
-    sqrt( 5.4711125 ^2 + 22.4924 ^ 2 + 5.4711125 ^ 2 )  * 1.645
+    sqrt( 5.4711125 ^ 2 + 22.4924 ^ 2 + 5.4711125 ^ 2 )  * 1.645
     ```
     
     ```
@@ -338,39 +338,38 @@ tract = 950501, one.zero = TRUE)
 
 ## To note
 
-- When the square root of the standard error formula doesn't exist (e.g., square root of a negative number), the ratio formula is used  instead.  
+- When the square root of the standard error formula doesn't exist (e.g., the square root of a negative number), the ratio formula is used  instead.  
 
-- This adjustment is performed `unit by unit`, `row by row`.  
+- The ratio adjustment is done `case by case`.  
 
 - There are some cases where the `one.zero` option makes the square root undefinable. In those cases, the function uses the "ratio" formula to estimate standard errors. 
 
-- Exists the possibility that the "ratio" estimates are higher than the "proportion" estimates without the `one.zero` option.  
+- There is a possibility that the "ratio" estimates are higher than the "proportion" estimates without the `one.zero` option.  
 
 ---
 
 ## Using an Excel file
 
-- After adjusting some minor format issues, save the Excel file as a CSV file
+- After some minor format issues are adjusted, save the Excel file as a CSV file
 - Read that file using `R`
 
 
 
-
-
-```r
-sheet <- fread(paste0(path, "moe.csv"))
-str(sheet)
-```
-
-```
-## Classes 'data.table' and 'data.frame':	90 obs. of  5 variables:
-##  $ destination: chr  "Food_Sec" "Food_Sec" "Food_Sec" "Food_Sec" ...
-##  $ myfield    : chr  "drive0913" "edass0913" "edcoll0913" "edhs0913" ...
-##  $ type       : chr  "Prop" "Prop" "Prop" "Prop" ...
-##  $ formula    : chr  "(b08101_009 + b08101_017) / b08101_001 * 100" "(b15002_014 + b15002_031) / b15002_001 * 100" "(b15002_015 + b15002_032 + b15002_016 + b15002_017 + b15002_018 + b15002_033 + b15002_034 + b15002_035) / b15002_001 * 100" "(b15002_011 + b15002_028) / b15002_001 * 100" ...
-##  $ moe_varname: chr  "drive0913_moe" "edass0913_moe" "edcoll0913_moe" "edhs0913_moe" ...
-##  - attr(*, ".internal.selfref")=<externalptr>
-```
+    
+    ```r
+    sheet <- fread(paste0(path, "moe.csv"))
+    str(sheet)
+    ```
+    
+    ```
+    ## Classes 'data.table' and 'data.frame':	90 obs. of  5 variables:
+    ##  $ destination: chr  "Food_Sec" "Food_Sec" "Food_Sec" "Food_Sec" ...
+    ##  $ myfield    : chr  "drive0913" "edass0913" "edcoll0913" "edhs0913" ...
+    ##  $ type       : chr  "Prop" "Prop" "Prop" "Prop" ...
+    ##  $ formula    : chr  "(b08101_009 + b08101_017) / b08101_001 * 100" "(b15002_014 + b15002_031) / b15002_001 * 100" "(b15002_015 + b15002_032 + b15002_016 + b15002_017 + b15002_018 + b15002_033 + b15002_034 + b15002_035) / b15002_001 * 100" "(b15002_011 + b15002_028) / b15002_001 * 100" ...
+    ##  $ moe_varname: chr  "drive0913_moe" "edass0913_moe" "edcoll0913_moe" "edhs0913_moe" ...
+    ##  - attr(*, ".internal.selfref")=<externalptr>
+    ```
 
 --- 
 
@@ -378,23 +377,23 @@ str(sheet)
 
 - Define all levels in a vector
 
-  
-  ```r
-  # create level vector
-  levels <- c("state", "county", "county.subdivision", 
+    
+    ```r
+    # create level vector
+    levels <- c("state", "county", "county.subdivision", 
     "tract", "block.group", "congressional.district", 
     "school.district.secondary", "school.district.elementary")
-  ```
+    ```
 
 - This can take a while, here I downloaded the data first!
 
-  
-  ```r
-  # download the data first
-  wi_acs <- acsdata(sheet[, formula], level = levels)
-  # save the data
-  save(wi_acs, file = "wi_acs.rd")
-  ```
+    
+    ```r
+    # download the data first
+    wi_acs <- acsdata(sheet[, formula], level = levels)
+    # save the data
+    save(wi_acs, file = "wi_acs.rd")
+    ```
 
 
 
@@ -404,25 +403,25 @@ str(sheet)
 ## Using an Excel file
 
 
-- Use the corresponding columns and fields to create indicators
+- Define the function fields as vectors
 - Open the output file in Excel
 
-
-```r
-# compute indicators and export the data
-out <- sumacs(formula = sheet[, formula], varname = sheet[, myfield], 
-  method = sheet[, type], level = levels, one.zero = TRUE, 
-  data = wi_acs, file = "output.csv")
-```
-
-```
-## [1] ". . . . . .  ACS variables : 266"
-## [1] ". . . . . .  Levels : 8"
-## [1] ". . . . . .  New variables : 90"
-## [1] ". . . . . .  Creating variables"
-## [1] ". . . . . .  Formatting output"
-## [1] ". . . . . .  Data exported to a CSV file! Done!"
-```
+    
+    ```r
+    # compute indicators and export the data
+    out <- sumacs(formula = sheet[, formula], varname = sheet[, myfield], 
+      method = sheet[, type], level = levels, one.zero = TRUE, 
+      data = wi_acs, file = "output.csv")
+    ```
+    
+    ```
+    ## [1] ". . . . . .  ACS variables : 266"
+    ## [1] ". . . . . .  Levels : 8"
+    ## [1] ". . . . . .  New variables : 90"
+    ## [1] ". . . . . .  Creating variables"
+    ## [1] ". . . . . .  Formatting output"
+    ## [1] ". . . . . .  Data exported to a CSV file! Done!"
+    ```
 
 ---
 
@@ -440,4 +439,4 @@ out <- sumacs(formula = sheet[, formula], varname = sheet[, myfield],
     - It depends heavily on the ACS package
     - Not the fastest function (loops involved despite some vectorization)
     - It takes less than a minute to create 90 indicators
-    - Limited to only 8 levels
+    - Limited to only eight levels

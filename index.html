@@ -81,10 +81,10 @@ devtools::install_github(&quot;sdaza/acsr&quot;)
 </code></pre></li>
 <li><p>Check defaults!</p>
 
-<pre><code>State = WI
-Year  = 2013
-Span = 5
-Level = county
+<pre><code>state = WI
+year  = 2013
+span = 5
+level = county
 </code></pre></li>
 </ul>
 
@@ -98,7 +98,7 @@ Level = county
   </hgroup>
   <article data-timings="">
     <ul>
-<li>To download the data can be slow, specially when there are many geographic/administrative levels</li>
+<li>To download the data can be slow, especially when there are many geographic/administrative levels</li>
 <li><p>A better approach is to download the data first, and then use them as input</p>
 
 <pre><code class="r">d &lt;- acsdata(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;,
@@ -110,7 +110,7 @@ Level = county
 ## [1] &quot;. . . . . .  Getting county data&quot;
 ## [1] &quot;. . . . . .  Done!&quot;
 </code></pre></li>
-<li><p>This will create a list with ACS objects</p></li>
+<li><p>This will create a list of ACS objects</p></li>
 </ul>
 
   </article>
@@ -183,8 +183,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, format.
   </hgroup>
   <article data-timings="">
     <ul>
-<li>Define a CSV file to export the output</li>
-</ul>
+<li><p>Define a CSV file to export the output</p>
 
 <pre><code class="r">tab &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048 / b16004_001)&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = &quot;d.csv&quot;)
@@ -196,7 +195,8 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = 
 ## [1] &quot;. . . . . .  Creating variables&quot;
 ## [1] &quot;. . . . . .  Formatting output&quot;
 ## [1] &quot;. . . . . .  Data exported to a CSV file! Done!&quot;
-</code></pre>
+</code></pre></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -208,8 +208,7 @@ varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, data = d, file = 
   </hgroup>
   <article data-timings="">
     <ul>
-<li>Different ways to estimate standard errors</li>
-</ul>
+<li><p>Different ways to estimate standard errors</p>
 
 <pre><code class="r">tab1 &lt;- sumacs(formula = &quot;(b16004_004 + b16004_026 + b16004_048) / b16004_001&quot;, 
 varname = &quot;langspan0913&quot;, method = &quot;prop&quot;, level = &quot;tract&quot;, county = 1, 
@@ -227,7 +226,8 @@ tract = 950501, one.zero = TRUE)
 
 <pre><code>##          stfid tract_fips langspan0913 langspan0913_moe
 ## 1: 55001950501     950501   0.02263907        0.0245074
-</code></pre>
+</code></pre></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -250,7 +250,7 @@ tract = 950501, one.zero = TRUE)
 <li><p><code>one.zero = TRUE</code></p>
 
 <pre><code class="r">( sqrt(( 5.4711125 ^ 2 + 22.4924 ^ 2) - 
-( 0.0226390685640362 ^2 * 102.1277 ^ 2 )) / 1546 ) * 1.645 
+( 0.0226390685640362 ^ 2 * 102.1277 ^ 2 )) / 1546 ) * 1.645 
 </code></pre>
 
 <pre><code>## [1] 0.0245074
@@ -336,7 +336,7 @@ tract = 950501, one.zero = FALSE)
 ## 1: 55001950501     950501   35   39.128
 </code></pre>
 
-<pre><code class="r">sqrt( 5.4711125 ^2 + 22.4924 ^ 2 + 5.4711125 ^ 2 )  * 1.645
+<pre><code class="r">sqrt( 5.4711125 ^ 2 + 22.4924 ^ 2 + 5.4711125 ^ 2 )  * 1.645
 </code></pre>
 
 <pre><code>## [1] 39.12798
@@ -381,10 +381,10 @@ tract = 950501, one.zero = TRUE)
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>When the square root of the standard error formula doesn&#39;t exist (e.g., square root of a negative number), the ratio formula is used  instead.  </p></li>
-<li><p>This adjustment is performed <code>unit by unit</code>, <code>row by row</code>.  </p></li>
+<li><p>When the square root of the standard error formula doesn&#39;t exist (e.g., the square root of a negative number), the ratio formula is used  instead.  </p></li>
+<li><p>The ratio adjustment is done <code>case by case</code>.  </p></li>
 <li><p>There are some cases where the <code>one.zero</code> option makes the square root undefinable. In those cases, the function uses the &quot;ratio&quot; formula to estimate standard errors. </p></li>
-<li><p>Exists the possibility that the &quot;ratio&quot; estimates are higher than the &quot;proportion&quot; estimates without the <code>one.zero</code> option.  </p></li>
+<li><p>There is a possibility that the &quot;ratio&quot; estimates are higher than the &quot;proportion&quot; estimates without the <code>one.zero</code> option.  </p></li>
 </ul>
 
   </article>
@@ -397,9 +397,8 @@ tract = 950501, one.zero = TRUE)
   </hgroup>
   <article data-timings="">
     <ul>
-<li>After adjusting some minor format issues, save the Excel file as a CSV file</li>
-<li>Read that file using <code>R</code></li>
-</ul>
+<li>After some minor format issues are adjusted, save the Excel file as a CSV file</li>
+<li><p>Read that file using <code>R</code></p>
 
 <pre><code class="r">sheet &lt;- fread(paste0(path, &quot;moe.csv&quot;))
 str(sheet)
@@ -412,7 +411,8 @@ str(sheet)
 ##  $ formula    : chr  &quot;(b08101_009 + b08101_017) / b08101_001 * 100&quot; &quot;(b15002_014 + b15002_031) / b15002_001 * 100&quot; &quot;(b15002_015 + b15002_032 + b15002_016 + b15002_017 + b15002_018 + b15002_033 + b15002_034 + b15002_035) / b15002_001 * 100&quot; &quot;(b15002_011 + b15002_028) / b15002_001 * 100&quot; ...
 ##  $ moe_varname: chr  &quot;drive0913_moe&quot; &quot;edass0913_moe&quot; &quot;edcoll0913_moe&quot; &quot;edhs0913_moe&quot; ...
 ##  - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt;
-</code></pre>
+</code></pre></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -450,9 +450,8 @@ save(wi_acs, file = &quot;wi_acs.rd&quot;)
   </hgroup>
   <article data-timings="">
     <ul>
-<li>Use the corresponding columns and fields to create indicators</li>
-<li>Open the output file in Excel</li>
-</ul>
+<li>Define the function fields as vectors</li>
+<li><p>Open the output file in Excel</p>
 
 <pre><code class="r"># compute indicators and export the data
 out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield], 
@@ -466,7 +465,8 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield],
 ## [1] &quot;. . . . . .  Creating variables&quot;
 ## [1] &quot;. . . . . .  Formatting output&quot;
 ## [1] &quot;. . . . . .  Data exported to a CSV file! Done!&quot;
-</code></pre>
+</code></pre></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -494,7 +494,7 @@ out &lt;- sumacs(formula = sheet[, formula], varname = sheet[, myfield],
 <li>It depends heavily on the ACS package</li>
 <li>Not the fastest function (loops involved despite some vectorization)</li>
 <li>It takes less than a minute to create 90 indicators</li>
-<li>Limited to only 8 levels</li>
+<li>Limited to only eight levels</li>
 </ul></li>
 </ul>
 

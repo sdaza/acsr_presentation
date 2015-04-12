@@ -1,41 +1,7 @@
-devtools::install_github("slidify", "ramnathv")#
-
-devtools::install_github("slidifyLibraries", "ramnathv")#
-
-setwd("/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/acsr_presentation")#
-
-setwd("/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/acsr_presentation")#
-#
+library(data.table)#
 
 library(slidify)#
 
-library(data.table)#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-
-slidify("index.Rmd")#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-
-slidify("index.Rmd")#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-
-slidify("index.Rmd")#
-#
-
-slidify("index.Rmd")#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-
-setwd("/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/acsr_presentation")#
-
-slidify("index.Rmd")#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-
-slidify("index.Rmd")#
-
 setwd("/Users/sdaza/Documents/UWSociology/00Projects/Various/AppliedPopulationLab/acsr_presentation")#
 
 slidify("index.Rmd")#
@@ -59,26 +25,6 @@ slidify("index.Rmd")#
 publish(user = "sdaza", repo = "acsr_presentation")#
 
 slidify("index.Rmd")#
-#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-#
-
-slidify("index.Rmd")#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-
-slidify("index.Rmd")#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-
-slidify("index.Rmd")#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-
-?acsr::acsdata#
-
-slidify("index.Rmd")#
 
 publish(user = "sdaza", repo = "acsr_presentation")#
 
@@ -101,27 +47,4 @@ publish(user = "sdaza", repo = "acsr_presentation")#
 slidify("index.Rmd")#
 
 publish(user = "sdaza", repo = "acsr_presentation")#
-
-slidify("index.Rmd")#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-
-slidify("index.Rmd")#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-
-slidify("index.Rmd")#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-
-slidify("index.Rmd")#
-
-publish(user = "sdaza", repo = "acsr_presentation")#
-
-?acsdata#
-
-?acsdata#
-#
-
-?acsr::acsdata#
 
